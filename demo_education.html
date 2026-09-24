@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Aula demo</title></head>
+<body>
+  <main>
+    <h1>Aula demo</h1>
+    <p>Plataforma educativa de prueba para validar Site2Tools.</p>
+    <nav>
+      <a href="#courses" id="courses-link">Cursos</a>
+      <a href="#assignments" id="assignments-link">Tareas pendientes</a>
+    </nav>
+    <section id="courses" hidden>
+      <h2>Mis cursos</h2>
+      <a href="#algebra" id="algebra-link">Álgebra</a>
+    </section>
+    <section id="algebra" hidden>
+      <h2>Álgebra</h2>
+      <p>Curso de Álgebra básica.</p>
+      <a href="#assignment" id="assignment-link">Tarea: ecuaciones lineales</a>
+    </section>
+    <section id="assignments" hidden>
+      <h2>Tareas pendientes</h2>
+      <a href="#assignment" id="assignment-link-2">Álgebra — ecuaciones lineales</a>
+    </section>
+    <section id="assignment" hidden>
+      <h2>Tarea: ecuaciones lineales</h2>
+      <p>Sube tu solución en PDF y entrégala.</p>
+      <label>Archivo de solución <input type="file" name="solution"></label>
+      <button id="submit" type="button">Entregar tarea</button>
+      <p id="status"></p>
+    </section>
+  </main>
+  <script>
+    function show(id) {
+      document.querySelectorAll('section').forEach((item) => { item.hidden = true; });
+      const target = document.getElementById(id);
+      if (target) target.hidden = false;
+    }
+    function route() { show(location.hash.slice(1) || ''); }
+    addEventListener('hashchange', route);
+    route();
+    document.getElementById('submit').addEventListener('click', () => {
+      const file = document.querySelector('input[type=file]').files[0];
+      document.getElementById('status').textContent = file
+        ? 'Tarea entregada. Confirmation ID: DEMO-83921'
+        : 'Falta el archivo';
+    });
+  </script>
+</body>
+</html>
+

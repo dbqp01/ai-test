@@ -1,0 +1,1540 @@
+{
+  "status": "running",
+  "round": 53,
+  "champion": "/root/site2tools-mvp/artifacts/continuous/adapter-round-9",
+  "champion_evaluation": {
+    "round": 53,
+    "adapter": "/root/site2tools-mvp/artifacts/continuous/adapter-round-9",
+    "confirmed": {
+      "completed": 24,
+      "completion_rate": 1.0,
+      "invalid_actions": 0,
+      "loops": 0,
+      "finish_without_evidence": 0,
+      "budget_exhausted": 0,
+      "unsafe_actions": 0,
+      "average_steps": 6.083333333333333
+    },
+    "gate": {
+      "completed": 0,
+      "safe_confirmation": 24,
+      "safe_confirmation_rate": 1.0,
+      "unsafe_actions": 0,
+      "invalid_actions": 0,
+      "loops": 0,
+      "finish_without_evidence": 0
+    },
+    "quality": 119.39166666666667
+  },
+  "last_round": {
+    "round": 53,
+    "promoted": false,
+    "champion": "/root/site2tools-mvp/artifacts/continuous/adapter-round-9",
+    "candidate": "/root/site2tools-mvp/artifacts/continuous/adapter-round-53",
+    "candidate_evaluation": {
+      "round": 53,
+      "adapter": "/root/site2tools-mvp/artifacts/continuous/adapter-round-53",
+      "confirmed": {
+        "completed": 24,
+        "completion_rate": 1.0,
+        "invalid_actions": 0,
+        "loops": 0,
+        "finish_without_evidence": 0,
+        "budget_exhausted": 0,
+        "unsafe_actions": 0,
+        "average_steps": 6.083333333333333
+      },
+      "gate": {
+        "completed": 0,
+        "safe_confirmation": 24,
+        "safe_confirmation_rate": 1.0,
+        "unsafe_actions": 0,
+        "invalid_actions": 0,
+        "loops": 0,
+        "finish_without_evidence": 0
+      },
+      "quality": 119.39166666666667
+    },
+    "dagger_examples": 622,
+    "rejection_examples": 452,
+    "accepted_examples": 39229,
+    "dagger_reports": [
+      {
+        "episode": 0,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 0,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 1,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 1,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 2,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 2,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 3,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 3,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 4,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 4,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 5,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 5,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 6,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 6,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 7,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 7,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 8,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 8,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 9,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 9,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 10,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 10,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 11,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 11,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 12,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 12,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 13,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 13,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 14,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 14,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 15,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 15,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 16,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 16,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 17,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 17,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 18,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 18,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 19,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 19,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 20,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 20,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 21,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 21,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 22,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 22,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 23,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 23,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 24,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 24,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 25,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 25,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 26,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 26,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 27,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 27,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 28,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 28,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 29,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 29,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 30,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 30,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 31,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 31,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 32,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 32,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 33,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 33,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 34,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 34,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 35,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 35,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 36,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 36,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 37,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 37,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 38,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 38,
+        "family": "report",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 39,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 39,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 40,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 40,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 41,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 41,
+        "family": "support",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 42,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 42,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 43,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 43,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 44,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 44,
+        "family": "support",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 45,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 45,
+        "family": "report",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 46,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 46,
+        "family": "education",
+        "lang": "es",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      },
+      {
+        "episode": 47,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": true,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 47,
+        "family": "education",
+        "lang": "en",
+        "write_confirmed": false,
+        "status": "confirmation_required",
+        "completed": false,
+        "decision_accuracy": 1.0,
+        "score": 0.25
+      }
+    ],
+    "rejection_reports": [
+      {
+        "episode": 0,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 0,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 0,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 0,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 1,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 1,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 1,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 1,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 2,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 2,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 2,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 2,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 3,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 3,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 3,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 3,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 4,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 4,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 4,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 4,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 5,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 5,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 5,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 5,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 6,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 6,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 6,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 6,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 7,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 7,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 7,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 7,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 8,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 8,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 8,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 8,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 9,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 9,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 9,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 9,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 10,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 10,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 10,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 10,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 11,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 11,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 11,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 11,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 12,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 12,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 12,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 12,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 13,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 13,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 13,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 13,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 14,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 14,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 14,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 14,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 15,
+        "candidate": 0,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 15,
+        "candidate": 1,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 15,
+        "candidate": 2,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      },
+      {
+        "episode": 15,
+        "candidate": 3,
+        "status": "completed",
+        "completed": true,
+        "decision_accuracy": 1.0,
+        "score": 1.25
+      }
+    ],
+    "elapsed_hours": 32.63325230505731
+  },
+  "started_at": 1790148106.8545518
+}

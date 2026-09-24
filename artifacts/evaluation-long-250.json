@@ -1,0 +1,10 @@
+{
+  "total": 250,
+  "valid_json": 250,
+  "decision_correct": 250,
+  "exact_action": 250,
+  "json_rate": 1.0,
+  "decision_accuracy": 1.0,
+  "exact_action_accuracy": 1.0,
+  "errors": []
+}

@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+artifacts/continuous/
+checkpoint-*/
+*.pt
+*.pth
+artifacts/site2tools-policy-qwen3-8b/
+artifacts/site2tools-policy-qwen38-27b/
+artifacts/*smoke*/
+*smoke*

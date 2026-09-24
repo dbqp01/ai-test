@@ -1,0 +1,12 @@
+{
+  "train_runtime": 1808.0112,
+  "train_samples_per_second": 26.863,
+  "train_steps_per_second": 1.679,
+  "total_flos": 1.6090493997581107e+17,
+  "train_loss": 0.1442888105418214,
+  "epoch": 2.0,
+  "model": "Qwen/Qwen3-1.7B",
+  "device": "AMD Radeon Graphics",
+  "hip": "7.0.51831",
+  "torch": "2.10.0+rocm7.0"
+}

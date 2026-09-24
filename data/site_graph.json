@@ -1,0 +1,1814 @@
+{
+  "start_url": "http://127.0.0.1:8000/demo_education.html",
+  "nodes": {
+    "54d6cf87d7698e78": {
+      "state_id": "54d6cf87d7698e78",
+      "url": "http://127.0.0.1:8000/demo_education.html",
+      "title": "Aula demo",
+      "text_preview": "Aula demo Plataforma educativa de prueba para validar Site2Tools. Cursos Tareas pendientes",
+      "actions": [
+        {
+          "action_id": "s2t-0",
+          "kind": "click",
+          "label": "Cursos",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#courses",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-1",
+          "kind": "click",
+          "label": "Tareas pendientes",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        }
+      ]
+    },
+    "25042f565747cce2": {
+      "state_id": "25042f565747cce2",
+      "url": "http://127.0.0.1:8000/demo_education.html#courses",
+      "title": "Aula demo",
+      "text_preview": "Aula demo Plataforma educativa de prueba para validar Site2Tools. Cursos Tareas pendientes Mis cursos Álgebra",
+      "actions": [
+        {
+          "action_id": "s2t-0",
+          "kind": "click",
+          "label": "Cursos",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#courses",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-1",
+          "kind": "click",
+          "label": "Tareas pendientes",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-2",
+          "kind": "click",
+          "label": "Álgebra",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        }
+      ]
+    },
+    "72fa351887fd6ab5": {
+      "state_id": "72fa351887fd6ab5",
+      "url": "http://127.0.0.1:8000/demo_education.html#assignments",
+      "title": "Aula demo",
+      "text_preview": "Aula demo Plataforma educativa de prueba para validar Site2Tools. Cursos Tareas pendientes Tareas pendientes Álgebra — ecuaciones lineales",
+      "actions": [
+        {
+          "action_id": "s2t-0",
+          "kind": "click",
+          "label": "Cursos",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#courses",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-1",
+          "kind": "click",
+          "label": "Tareas pendientes",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-4",
+          "kind": "click",
+          "label": "Álgebra — ecuaciones lineales",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        }
+      ]
+    },
+    "ada540a192b9be75": {
+      "state_id": "ada540a192b9be75",
+      "url": "http://127.0.0.1:8000/demo_education.html#algebra",
+      "title": "Aula demo",
+      "text_preview": "Aula demo Plataforma educativa de prueba para validar Site2Tools. Cursos Tareas pendientes Álgebra Curso de Álgebra básica. Tarea: ecuaciones lineales",
+      "actions": [
+        {
+          "action_id": "s2t-0",
+          "kind": "click",
+          "label": "Cursos",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#courses",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-1",
+          "kind": "click",
+          "label": "Tareas pendientes",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-3",
+          "kind": "click",
+          "label": "Tarea: ecuaciones lineales",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        }
+      ]
+    },
+    "215048d84589ed5f": {
+      "state_id": "215048d84589ed5f",
+      "url": "http://127.0.0.1:8000/demo_education.html#assignment",
+      "title": "Aula demo",
+      "text_preview": "Aula demo Plataforma educativa de prueba para validar Site2Tools. Cursos Tareas pendientes Tarea: ecuaciones lineales Sube tu solución en PDF y entrégala. Archivo de solución Entregar tarea",
+      "actions": [
+        {
+          "action_id": "s2t-0",
+          "kind": "click",
+          "label": "Cursos",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#courses",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-1",
+          "kind": "click",
+          "label": "Tareas pendientes",
+          "role": "link",
+          "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+          "input_type": "",
+          "name": "",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-5",
+          "kind": "input",
+          "label": "solution",
+          "role": "input",
+          "href": "",
+          "input_type": "file",
+          "name": "solution",
+          "placeholder": "",
+          "dangerous": false,
+          "enabled": true
+        },
+        {
+          "action_id": "s2t-6",
+          "kind": "click",
+          "label": "Entregar tarea",
+          "role": "button",
+          "href": "",
+          "input_type": "button",
+          "name": "",
+          "placeholder": "",
+          "dangerous": true,
+          "enabled": true
+        }
+      ]
+    }
+  },
+  "edges": [
+    {
+      "from": "54d6cf87d7698e78",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "54d6cf87d7698e78",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-3",
+        "kind": "click",
+        "label": "Tarea: ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-5",
+        "kind": "input",
+        "label": "solution",
+        "role": "input",
+        "href": "",
+        "input_type": "file",
+        "name": "solution",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "input|solution||input"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-3",
+        "kind": "click",
+        "label": "Tarea: ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-5",
+        "kind": "input",
+        "label": "solution",
+        "role": "input",
+        "href": "",
+        "input_type": "file",
+        "name": "solution",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "input|solution||input"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-5",
+        "kind": "input",
+        "label": "solution",
+        "role": "input",
+        "href": "",
+        "input_type": "file",
+        "name": "solution",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "input|solution||input"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "ada540a192b9be75",
+      "action": {
+        "action_id": "s2t-3",
+        "kind": "click",
+        "label": "Tarea: ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link",
+        "click|tarea: ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "215048d84589ed5f",
+      "action": {
+        "action_id": "s2t-5",
+        "kind": "input",
+        "label": "solution",
+        "role": "input",
+        "href": "",
+        "input_type": "file",
+        "name": "solution",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "input|solution||input"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "25042f565747cce2",
+      "action": {
+        "action_id": "s2t-2",
+        "kind": "click",
+        "label": "Álgebra",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#algebra",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link",
+        "click|álgebra|http://127.0.0.1:8000/demo_education.html#algebra|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-0",
+        "kind": "click",
+        "label": "Cursos",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#courses",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|cursos|http://127.0.0.1:8000/demo_education.html#courses|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-1",
+        "kind": "click",
+        "label": "Tareas pendientes",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignments",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link"
+      ]
+    },
+    {
+      "from": "72fa351887fd6ab5",
+      "action": {
+        "action_id": "s2t-4",
+        "kind": "click",
+        "label": "Álgebra — ecuaciones lineales",
+        "role": "link",
+        "href": "http://127.0.0.1:8000/demo_education.html#assignment",
+        "input_type": "",
+        "name": "",
+        "placeholder": "",
+        "dangerous": false,
+        "enabled": true
+      },
+      "path": [
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link",
+        "click|tareas pendientes|http://127.0.0.1:8000/demo_education.html#assignments|link",
+        "click|álgebra — ecuaciones lineales|http://127.0.0.1:8000/demo_education.html#assignment|link"
+      ]
+    }
+  ],
+  "generated_at": 1790143794.216507,
+  "stats": {
+    "states": 5,
+    "edges": 77,
+    "paths_considered": 27
+  }
+}

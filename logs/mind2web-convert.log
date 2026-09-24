@@ -1,0 +1,26 @@
+nohup: ignoring input
+FILE /root/huggingface/mind2web-full/data/train/train_0.json
+FILE /root/huggingface/mind2web-full/data/train/train_1.json
+FILE /root/huggingface/mind2web-full/data/train/train_10.json
+FILE /root/huggingface/mind2web-full/data/train/train_2.json
+FILE /root/huggingface/mind2web-full/data/train/train_3.json
+FILE /root/huggingface/mind2web-full/data/train/train_4.json
+FILE /root/huggingface/mind2web-full/data/train/train_5.json
+FILE /root/huggingface/mind2web-full/data/train/train_6.json
+FILE /root/huggingface/mind2web-full/data/train/train_7.json
+FILE /root/huggingface/mind2web-full/data/train/train_8.json
+FILE /root/huggingface/mind2web-full/data/train/train_9.json
+{"tasks": 1009, "steps": 7775, "sites": 73}
+nohup: ignoring input
+FILE /root/huggingface/mind2web-full/data/train/train_0.json
+FILE /root/huggingface/mind2web-full/data/train/train_1.json
+FILE /root/huggingface/mind2web-full/data/train/train_10.json
+FILE /root/huggingface/mind2web-full/data/train/train_2.json
+FILE /root/huggingface/mind2web-full/data/train/train_3.json
+FILE /root/huggingface/mind2web-full/data/train/train_4.json
+FILE /root/huggingface/mind2web-full/data/train/train_5.json
+FILE /root/huggingface/mind2web-full/data/train/train_6.json
+FILE /root/huggingface/mind2web-full/data/train/train_7.json
+FILE /root/huggingface/mind2web-full/data/train/train_8.json
+FILE /root/huggingface/mind2web-full/data/train/train_9.json
+{"tasks": 1009, "steps": 7775, "sites": 73}

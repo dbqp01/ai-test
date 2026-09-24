@@ -1,0 +1,37 @@
+{
+  "total": 250,
+  "valid_json": 250,
+  "decision_correct": 250,
+  "exact_action": 248,
+  "json_rate": 1.0,
+  "decision_accuracy": 1.0,
+  "exact_action_accuracy": 0.992,
+  "errors": [
+    {
+      "expected": {
+        "decision": "act",
+        "reason": "This is the next action that advances the goal.",
+        "action_index": 1
+      },
+      "predicted": {
+        "decision": "act",
+        "reason": "This is the next action that advances the goal.",
+        "action_index": 0
+      },
+      "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":0}"
+    },
+    {
+      "expected": {
+        "decision": "act",
+        "reason": "This is the next action that advances the goal.",
+        "action_index": 2
+      },
+      "predicted": {
+        "decision": "act",
+        "reason": "This is the next action that advances the goal.",
+        "action_index": 0
+      },
+      "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":0}"
+    }
+  ]
+}
