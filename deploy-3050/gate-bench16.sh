@@ -24,9 +24,9 @@ fi
 echo "GATE VERDE - guard de precision fuera de dominio"
 # Los tests CPU cubren el hotel; nada impedia que la capa extractiva volviera a dejar entrar cromo
 # de navegacion en otros dominios. Este guard lo pilla en ~40 s, antes de gastar la corrida de 6 min.
-# Tope 12 y no 8: medido con 2000 paginas la tasa real es 8,1%, y con 400 oscila 4,5-8% segun que
-# subconjunto toque. Un tope pegado al numero observado fallaria por varianza, no por regresion.
-./.venv/Scripts/python.exe eval_precision_ooc.py 400 12 > logs/prec-ooc.log 2>&1
+# Tope 8 sobre la cubeta de ACCION (que es la que evalua el script ahora): medido 3,7% a 400 y 7,0%
+# a 2000, asi que 8 deja margen de muestreo y aun pilla una regresion del tipo 68,8%.
+./.venv/Scripts/python.exe eval_precision_ooc.py 400 8 > logs/prec-ooc.log 2>&1
 rc=$?
 tail -1 logs/prec-ooc.log
 if [ $rc -ne 0 ]; then
