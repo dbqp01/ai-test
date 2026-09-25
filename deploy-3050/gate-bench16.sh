@@ -21,6 +21,16 @@ if [ $rc -ne 0 ]; then
   echo "GATE ROJO rc=$rc - no se lanza el bench"
   exit $rc
 fi
+echo "GATE VERDE - guard de precision fuera de dominio"
+# Los tests CPU cubren el hotel; nada impedia que la capa extractiva volviera a dejar entrar cromo
+# de navegacion en otros dominios. Este guard lo pilla en ~40 s, antes de gastar la corrida de 6 min.
+./.venv/Scripts/python.exe eval_precision_ooc.py 400 8 > logs/prec-ooc.log 2>&1
+rc=$?
+tail -1 logs/prec-ooc.log
+if [ $rc -ne 0 ]; then
+  echo "GUARD DE PRECISION ROJO rc=$rc - no se lanza el bench"
+  exit $rc
+fi
 echo "GATE VERDE - lanzando bench16"
 ./.venv/Scripts/python.exe run-local16.py > logs/bench16.log 2>&1
 echo "BENCH rc=$?"

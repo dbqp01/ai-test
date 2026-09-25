@@ -15,6 +15,11 @@ from site2tools.core import clean, pick_answer
 
 FUERA = re.compile(r"^(?:https?://)?(?:www\.)?([a-z0-9.-]+)", re.I)
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 400
+# Segundo argumento opcional = tope de sobreafirmacion admitido. Con eso este script pasa de ser una
+# medida puntual a ser un guard: el gate lo llama y cualquier cambio que vuelva a dejar entrar cromo
+# de navegacion como evidencia se pilla en segundos, sin esperar a otra auditoria manual.
+MAXIMO = float(sys.argv[2]) if len(sys.argv) > 2 else None
+
 rng = random.Random(20260925)
 
 POSIBLES = [Path("data/m2w2.valid.jsonl"),
@@ -60,3 +65,11 @@ print(f"la heuristica_afirmo_algo en {respondidas} de {N} objetivos de ACCION "
 print("--- muestras para clasificar a mano ---")
 for kind, lit, goal, valor, url in ejemplos[:18]:
     print(f"  [{kind}|{lit}] {url}\n     goal: {goal}\n     resp: {valor}")
+
+porcentaje = 100.0 * respondidas / max(1, N)
+if MAXIMO is not None:
+    if porcentaje > MAXIMO:
+        print(f"FALLO: sobreafirmacion {porcentaje:.1f}% por encima del tope {MAXIMO:.1f}%")
+        raise SystemExit(1)
+    print(f"OK: sobreafirmacion {porcentaje:.1f}% <= tope {MAXIMO:.1f}%")
+
