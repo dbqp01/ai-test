@@ -66,8 +66,8 @@ Despues de tres reglas estructurales:
   `attorneys near X, NJ pedicure salon near Y...`). **19,5 % -> 11,8 %**.
 - Filtro de **listas de etiquetas**: proporcion de tokens que empiezan en mayuscula fuera del
   primero. Medido sobre lo que quedaba: cromo con mediana 0,69 y maximo 1,00, mientras que las cinco
-  evidencias buenas del hotel estan entre 0,00 y 0,36. **11,8 % -> 4,5 %** (14,5 veces menos que la
-  salida).
+  evidencias buenas del hotel estan entre 0,00 y 0,36. **11,8 % -> 4,5 % a 400 paginas** (y 8,1 % a
+  2000, que es el numero que vale: ver abajo).
 
 Los dos umbrales los fijo el gate, no la intuicion: aplicar el filtro de repeticion tambien a las
 ventanas recortadas mataba evidencia valida dentro de bloques enormes sin puntuacion, y el umbral
@@ -77,8 +77,14 @@ frase, y las dos cosas estan congeladas como test.
 
 El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
 procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
-El 4,5 % restante es sobre todo cromo de formulario de alta densidad ("Yes No Continue Male Female")
-y dos precios de widget leidos por `anchored_price` en paginas de reservas.
+
+**El numero honesto es 8,1 %, no 4,5 %.** Con 400 paginas salio 4,5 %, pero al ampliar a **2000**
+paginas la tasa sube a **8,1 %** (162/2000): el subconjunto de 400 era optimista por varianza de
+muestreo, y lo anoto porque es exactamente el tipo de numero que se tiende a reportar del lado
+favorable. El guard del gate usa 400 paginas por rapidez con tope 12 %, no 8 %: un tope pegado a lo
+observado fallaria por muestreo, no por regresion. Lo que queda dentro del 8,1 % es cromo de
+formulario de alta densidad ("Yes No Continue Male Female") y precios de widget leidos por
+`anchored_price` en paginas de reservas.
 
 ## 6. `ubicacion-barrio` resuelto y lo que queda de `gastronomia`
 **RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San
