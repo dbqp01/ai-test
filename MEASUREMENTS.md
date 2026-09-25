@@ -150,6 +150,15 @@ Sigue abierto de la tarea de patrones: el `telefono` de atencion al cliente que 
 objetivo que no lo pide (10 casos). Ahi el disparador es legitimo y el problema es de **intencion**
 del objetivo, no del patron -- una regex no lo decide.
 
+**Hipotesis refutada con medida, no con opinion (25-sep 13:29 UTC):** se probo a anclar `telefono` a
+una palabra de contacto (`call`, `contact`, `whatsapp`, `front desk`, `reservas`...), igual que se
+hace con precio y hora. Resultado: **los 10 casos de fuga OOD cumplen el anclaje, y tambien el del
+hotel** -- son numeros reales de atencion al cliente mostrados junto a la palabra 'call'. La regla
+filtraria 0 de 10, asi que **no se escribio**. Lo que queda ahi es un problema de **intencion del
+objetivo** (nadie pidio un telefono), y eso no lo decide una regex: o lo decide el modelo al
+elegir `finish`/`block`, o un clasificador de intencion explícito. Registrado como resultado
+negativo para que no se vuelva a intentar.
+
 ## 6. `ubicacion-barrio` resuelto y lo que queda de `gastronomia`
 **RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San
 Pedro"), y lo que impedia partirla era el suelo del extractor (>=25 caracteres y >=5 palabras),
