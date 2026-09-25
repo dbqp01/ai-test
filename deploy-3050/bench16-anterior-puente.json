@@ -1,0 +1,190 @@
+[
+ {
+  "label": "precio-doble-superior",
+  "goal": "Cual es el precio por noche de la habitacion Doble Superior",
+  "status": "answered",
+  "answer": {
+   "kind": "precio",
+   "value": "$ 65",
+   "context": "Check-out Date 2026-09-27 Duration 1 night Guests 2 Guests Total Price Breakfast included $ 65 $65 per night STANDARD RATE INCLUDED SERVICES Andean Buffet Breakfast (6:00 - 9:00 AM) Complimentary 24/7 Oxygen Service Complimentary Hot Drinks Station (Coca/Muña tea)"
+  },
+  "steps": 1,
+  "seconds": 17.1
+ },
+ {
+  "label": "desayuno-hora",
+  "goal": "A que hora se sirve el desayuno",
+  "status": "answered",
+  "answer": {
+   "kind": "desayuno-hora",
+   "value": "6:00 AM to 9:00 AM",
+   "context": "faq:Is breakfast included and what time is it served?"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "checkin-hora",
+  "goal": "A que hora es el check-in",
+  "status": "answered",
+  "answer": {
+   "kind": "check-in",
+   "value": "12:00",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "checkout-hora",
+  "goal": "A que hora es el check-out",
+  "status": "answered",
+  "answer": {
+   "kind": "check-out",
+   "value": "10:30",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "direccion",
+  "goal": "Cual es la direccion del hotel",
+  "status": "answered",
+  "answer": {
+   "kind": "direccion",
+   "value": "759 Calle Hospital, Cusco, Cusco, 08002, PE",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "telefono",
+  "goal": "Cual es el telefono de contacto",
+  "status": "answered",
+  "answer": {
+   "kind": "telefono",
+   "value": "+51992559943",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "correo",
+  "goal": "Cual es el correo electronico",
+  "status": "answered",
+  "answer": {
+   "kind": "correo",
+   "value": "info@usgarhoteles.com",
+   "context": "inbox. No spam, ever. Email SUBSCRIBE CONTACT 759 Calle Hospital, Centro de Cusco, Cusco info@usgarhoteles.com +51 992 559 943 QUICK LINKS Home Rooms Gallery Services Explore Cusco Book Now FOLLOW US FIND US ON YOUR FAVORITE TRAVEL PLATFORM AS FEATURED IN TripAdvisor Booking.com"
+  },
+  "steps": 1,
+  "seconds": 17.5
+ },
+ {
+  "label": "room-types",
+  "goal": "Que tipos de habitacion hay",
+  "status": "answered",
+  "answer": {
+   "kind": "room-types",
+   "value": "Double Superior Room | Superior Matrimonial Room | Family Superior Room | Triple Standard Room",
+   "context": "select:room-type"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "wifi-clave",
+  "goal": "Cual es la clave del wifi",
+  "status": "answered",
+  "answer": {
+   "kind": "wifi-clave",
+   "value": "el sitio anuncia wifi gratis pero no publica la clave",
+   "context": "structured:wifi_sin_clave"
+  },
+  "steps": 0,
+  "seconds": 4.3
+ },
+ {
+  "label": "piscina",
+  "goal": "Tiene piscina el hotel",
+  "status": "not_found_in_survey",
+  "answer": {},
+  "steps": 8,
+  "seconds": 82.6
+ },
+ {
+  "label": "gastronomia",
+  "goal": "Que restaurante tiene el hotel",
+  "status": "answered",
+  "answer": {
+   "kind": "extractiva",
+   "value": "03 Evening Cafeteria UNTIL 22:00 PM Warm beverages, light snacks, and cozy seating after your Machu Picchu tours.",
+   "context": "03 Evening Cafeteria UNTIL 22:00 PM Warm beverages, light snacks, and cozy seating after your Machu Picchu tours."
+  },
+  "steps": 3,
+  "seconds": 42.1
+ },
+ {
+  "label": "ubicacion-barrio",
+  "goal": "En que barrio esta el hotel",
+  "status": "answered",
+  "answer": {
+   "kind": "extractiva",
+   "value": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?",
+   "context": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?"
+  },
+  "steps": 1,
+  "seconds": 14.6
+ },
+ {
+  "label": "idiomas",
+  "goal": "El personal habla otros idiomas",
+  "status": "answered",
+  "answer": {
+   "kind": "extractiva",
+   "value": "Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice.",
+   "context": "Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice."
+  },
+  "steps": 1,
+  "seconds": 14.6
+ },
+ {
+  "label": "aeropuerto",
+  "goal": "Como llego desde el aeropuerto",
+  "status": "answered",
+  "answer": {
+   "kind": "faq",
+   "value": "Yes, we offer private transfer services. You can arrange a safe, comfortable pickup from Alejandro Velasco Astete Airport (CUZ) or the Poroy/Wanchaq train stations. Please contact us via email or WhatsApp with your flight/train details at least 24 hours in advance to schedule.",
+   "context": "faq:Do you offer airport or train station transfers?"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "equipaje",
+  "goal": "Puedo dejar el equipaje despues del check-out",
+  "status": "answered",
+  "answer": {
+   "kind": "faq",
+   "value": "Check-in is from 12:00 PM (noon), and check-out is until 10:30 AM. If you arrive earlier, we will gladly store your luggage for free or check you in early if your room is already prepared.",
+   "context": "faq:What are the check-in and check-out times?"
+  },
+  "steps": 0,
+  "seconds": 1.7
+ },
+ {
+  "label": "oxigeno",
+  "goal": "Hay oxigeno para la altura",
+  "status": "answered",
+  "answer": {
+   "kind": "faq",
+   "value": "Cusco is at 3,400 meters (11,150 feet). To help you acclimatize, we offer complimentary hot Coca tea 24/7 in our lobby. We recommend resting for the first few hours, drinking plenty of water, eating light meals, and avoiding alcohol. We also have oxygen assistance available at the reception if needed.",
+   "context": "faq:How can I prevent altitude sickness (soroche)?"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ }
+]

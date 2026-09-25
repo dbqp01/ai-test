@@ -1,0 +1,74 @@
+[
+ {
+  "label": "precio-doble-superior",
+  "status": "answered",
+  "answer": {
+   "kind": "precio",
+   "value": "$90",
+   "context": "All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUESTS Superior Matrimonial Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 03 / 04 8 GUESTS Family Super"
+  },
+  "steps": 2,
+  "seconds": 14.2
+ },
+ {
+  "label": "desayuno-hora",
+  "status": "answered",
+  "answer": {
+   "kind": "hora",
+   "value": "06:00 AM",
+   "context": "edients in the historic heart of Cusco. 100% - Included in Stay 01 Daily Buffet Breakfast 06:00 AM - 09:00 AM 02 Coca & Muna Station 24 HOURS 03 Evening Cafeteria UNTIL 22:00 PM OUR SERVICES 05 ELEVATED EXPERIENCE From the moment you arrive, we take care of every deta"
+  },
+  "steps": 2,
+  "seconds": 5.2
+ },
+ {
+  "label": "checkin-hora",
+  "status": "answered",
+  "answer": {
+   "kind": "hora",
+   "value": "6:00",
+   "context": "fast included $ 65 $65 per night STANDARD RATE INCLUDED SERVICES Andean Buffet Breakfast (6:00 - 9:00 AM) Complimentary 24/7 Oxygen Service Complimentary Hot Drinks Station (Coca/Muña tea) Free High-Speed Wi-Fi 24-Hour Front Desk Assistance Check-in: 12:00 hrs | C"
+  },
+  "steps": 4,
+  "seconds": 8.5
+ },
+ {
+  "label": "direccion",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 39.1
+ },
+ {
+  "label": "telefono",
+  "status": "answered",
+  "answer": {
+   "kind": "telefono",
+   "value": "+51 992 559 943",
+   "context": "Email SUBSCRIBE CONTACT 759 Calle Hospital, Centro de Cusco, Cusco info@usgarhoteles.com +51 992 559 943 QUICK LINKS Home Rooms Gallery Services Explore Cusco Book Now FOLLOW US FIND US ON YOUR FAVORITE TRAVEL PLATFORM AS FEATURED IN TripAdvisor Booking.com © 2026 USGAR HOT"
+  },
+  "steps": 1,
+  "seconds": 3.2
+ },
+ {
+  "label": "wifi-clave",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 12.6
+ },
+ {
+  "label": "piscina",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 15.0
+ },
+ {
+  "label": "room-types",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 47.8
+ }
+]

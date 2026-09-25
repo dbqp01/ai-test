@@ -1,0 +1,94 @@
+[
+ {
+  "label": "precio-doble-superior",
+  "goal": "Cual es el precio por noche de la habitacion Doble Superior",
+  "status": "answered",
+  "answer": {
+   "kind": "precio",
+   "value": "$90",
+   "context": "All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUESTS Superior Matrimonial Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 03 / 04 8 GUESTS Family Super"
+  },
+  "steps": 2,
+  "seconds": 15.8
+ },
+ {
+  "label": "desayuno-hora",
+  "goal": "A que hora se sirve el desayuno",
+  "status": "answered",
+  "answer": {
+   "kind": "desayuno-hora",
+   "value": "6:00 AM to 9:00 AM",
+   "context": "faq:Is breakfast included and what time is it served?"
+  },
+  "steps": 0,
+  "seconds": 0.6
+ },
+ {
+  "label": "checkin-hora",
+  "goal": "A que hora es el check-in",
+  "status": "answered",
+  "answer": {
+   "kind": "check-in",
+   "value": "12:00",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 0.8
+ },
+ {
+  "label": "direccion",
+  "goal": "Cual es la direccion del hotel",
+  "status": "answered",
+  "answer": {
+   "kind": "direccion",
+   "value": "759 Calle Hospital, Cusco, Cusco, 08002, PE",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 0.6
+ },
+ {
+  "label": "telefono",
+  "goal": "Cual es el telefono de contacto",
+  "status": "answered",
+  "answer": {
+   "kind": "telefono",
+   "value": "+51992559943",
+   "context": "jsonld"
+  },
+  "steps": 0,
+  "seconds": 0.7
+ },
+ {
+  "label": "wifi-clave",
+  "goal": "Cual es la clave del wifi",
+  "status": "answered",
+  "answer": {
+   "kind": "wifi-clave",
+   "value": "el sitio anuncia wifi gratis pero no publica la clave",
+   "context": "structured:wifi_sin_clave"
+  },
+  "steps": 0,
+  "seconds": 1.6
+ },
+ {
+  "label": "piscina",
+  "goal": "Tiene piscina el hotel",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 17.2
+ },
+ {
+  "label": "room-types",
+  "goal": "Que tipos de habitacion hay",
+  "status": "answered",
+  "answer": {
+   "kind": "room-types",
+   "value": "Double Superior Room | Superior Matrimonial Room | Family Superior Room | Triple Standard Room",
+   "context": "select:room-type"
+  },
+  "steps": 0,
+  "seconds": 0.6
+ }
+]

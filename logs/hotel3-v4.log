@@ -1,0 +1,10 @@
+SERVIDOR_OK
+##### precio-doble-superior: FALLO HTTP RemoteDisconnected Remote end closed connection without response
+##### desayuno-hora: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### checkin-hora: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### direccion: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### telefono: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### wifi-clave: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### piscina: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+##### room-types: FALLO HTTP URLError <urlopen error [Errno 111] Connection refused>
+=== TASA: 0/8 concluyen, 0/8 con respuesta literal ===

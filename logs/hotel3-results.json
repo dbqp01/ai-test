@@ -1,0 +1,78 @@
+[
+ {
+  "label": "precio-doble-superior",
+  "goal": "Cual es el precio por noche de la habitacion Doble Superior",
+  "status": "answered",
+  "answer": {
+   "kind": "precio",
+   "value": "$90",
+   "context": "All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUESTS Superior Matrimonial Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 03 / 04 8 GUESTS Family Super"
+  },
+  "steps": 2,
+  "seconds": 25.5
+ },
+ {
+  "label": "desayuno-hora",
+  "goal": "A que hora se sirve el desayuno",
+  "status": "answered",
+  "answer": {
+   "kind": "hora",
+   "value": "06:00 AM",
+   "context": "edients in the historic heart of Cusco. 100% - Included in Stay 01 Daily Buffet Breakfast 06:00 AM - 09:00 AM 02 Coca & Muna Station 24 HOURS 03 Evening Cafeteria UNTIL 22:00 PM OUR SERVICES 05 ELEVATED EXPERIENCE From the moment you arrive, we take care of every deta"
+  },
+  "steps": 2,
+  "seconds": 5.9
+ },
+ {
+  "label": "checkin-hora",
+  "goal": "A que hora es el check-in",
+  "status": "blocked",
+  "answer": {},
+  "steps": 2,
+  "seconds": 6.7
+ },
+ {
+  "label": "direccion",
+  "goal": "Cual es la direccion del hotel",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 18.3
+ },
+ {
+  "label": "telefono",
+  "goal": "Cual es el telefono de contacto",
+  "status": "answered",
+  "answer": {
+   "kind": "telefono",
+   "value": "+51992559943",
+   "context": "eam for direct reservations, private airport transfers, or travel advice. WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out? Is medical oxygen for altitude sickness"
+  },
+  "steps": 2,
+  "seconds": 5.7
+ },
+ {
+  "label": "wifi-clave",
+  "goal": "Cual es la clave del wifi",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 18.4
+ },
+ {
+  "label": "piscina",
+  "goal": "Tiene piscina el hotel",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 17.0
+ },
+ {
+  "label": "room-types",
+  "goal": "Que tipos de habitacion hay",
+  "status": "budget_exhausted",
+  "answer": {},
+  "steps": 8,
+  "seconds": 33.7
+ }
+]

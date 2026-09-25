@@ -1,0 +1,42 @@
+[
+ {
+  "label": "precio-doble-superior",
+  "goal": "Cual es el precio por noche de la habitacion Doble Superior",
+  "status": "http_error"
+ },
+ {
+  "label": "desayuno-hora",
+  "goal": "A que hora se sirve el desayuno",
+  "status": "http_error"
+ },
+ {
+  "label": "checkin-hora",
+  "goal": "A que hora es el check-in",
+  "status": "http_error"
+ },
+ {
+  "label": "direccion",
+  "goal": "Cual es la direccion del hotel",
+  "status": "http_error"
+ },
+ {
+  "label": "telefono",
+  "goal": "Cual es el telefono de contacto",
+  "status": "http_error"
+ },
+ {
+  "label": "wifi-clave",
+  "goal": "Cual es la clave del wifi",
+  "status": "http_error"
+ },
+ {
+  "label": "piscina",
+  "goal": "Tiene piscina el hotel",
+  "status": "http_error"
+ },
+ {
+  "label": "room-types",
+  "goal": "Que tipos de habitacion hay",
+  "status": "http_error"
+ }
+]

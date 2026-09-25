@@ -1,0 +1,30 @@
+SERVIDOR_OK
+##### precio-doble-superior answered pasos= 2 17s
+   R: precio = $90
+##### desayuno-hora answered pasos= 0 1s
+   R: desayuno-hora = 6:00 AM to 9:00 AM
+##### checkin-hora answered pasos= 0 1s
+   R: check-in = 12:00
+##### checkout-hora answered pasos= 0 1s
+   R: check-out = 10:30
+##### direccion answered pasos= 0 1s
+   R: direccion = 759 Calle Hospital, Cusco, Cusco, 08002, PE
+##### telefono answered pasos= 0 1s
+   R: telefono = +51992559943
+##### correo answered pasos= 2 7s
+   R: correo = info@usgarhoteles.com
+##### room-types answered pasos= 0 1s
+   R: room-types = Double Superior Room | Superior Matrimonial Room | Family Superior Room | Triple Standard Room
+##### wifi-clave answered pasos= 0 2s
+   R: wifi-clave = el sitio anuncia wifi gratis pero no publica la clave
+##### piscina not_found_in_survey pasos= 8 15s
+##### gastronomia budget_exhausted pasos= 8 30s
+##### ubicacion-barrio answered pasos= 2 7s
+   R: extractiva = Breakfast was great." Z Zen UNITED STATES / 2026 ” BOOKING.COM "It's a nice older building with a walk-around courtyard.
+##### idiomas answered pasos= 1 5s
+   R: extractiva = oom Family Superior Room Triple Standard Room CHECK AVAILABILITY GUEST REVIEWS What Our Guests Say Hear from travelers who have experienced USGAR Hote
+##### aeropuerto budget_exhausted pasos= 8 18s
+##### equipaje answered pasos= 0 1s
+   R: check-out = 10:30
+##### oxigeno budget_exhausted pasos= 8 29s
+=== BENCH16: 13/16 concluyen, 12 con respuesta ===

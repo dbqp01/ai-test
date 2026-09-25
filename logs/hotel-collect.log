@@ -1,0 +1,28 @@
+esperando servidor con artifacts/site2tools-student-17b-v4
+SERVIDOR_OK
+{
+  "ok": true,
+  "service": "site2tools",
+##### precio-doble-superior: answered steps=2 14s
+  RESPUESTA: precio = $90
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### desayuno-hora: answered steps=2 5s
+  RESPUESTA: hora = 06:00 AM
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+##### checkin-hora: answered steps=1 3s
+  RESPUESTA: hora = 6:00
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now Book Your Stay Please enter the primary guest details and confirm your dates to proceed to secure checkout. 1 Stay Dates & Room 2 Gues
+##### direccion: answered steps=2 5s
+  RESPUESTA: direccion = 759 Calle Hospital
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+##### telefono: answered steps=1 4s
+  RESPUESTA: telefono = +51992559943
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now 759 CALLE HOSPITAL, CUSCO Contact Us & Plan Your Trip We would love to hear from you. Reach out to our bilingual team for direct reser
+##### wifi-clave: budget_exhausted steps=8 28s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now NEARBY 08 Explore Cusco Discover the wonders that await just outside your door All Historical Nature Cultural Adventure HISTORICAL 112
+##### piscina: not_found_in_survey steps=8 14s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### room-types: answered steps=2 5s
+  RESPUESTA: extractiva = Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lightin
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+=== TASA: 6/8 concluyen, 6/8 con respuesta literal ===

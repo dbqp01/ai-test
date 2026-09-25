@@ -1,0 +1,18 @@
+##### precio: answered reason=estado_repetido_con_respuesta steps=2
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/1] click 'All Rooms' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that celebrate Cusco's cultural heritage. All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04
+##### desayuno: answered reason=estado_repetido_con_respuesta steps=2
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/1] click 'SERVICES' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Guests ROOM TYPE Any Room Double Superior Room Superior Matrimonial Room Family Superior Room Triple Sta
+##### wifi: budget_exhausted reason= steps=8
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/1] click 'SERVICES' -> True 
+  2 [act/1] click 'EXPLORE CUSCO' -> True 
+  3 [act/7] click 'Toggle dark mode' -> True 
+  4 [act/5] click 'EN' -> True 
+  5 [act/0] click 'USGAR Hotels Home' -> True 
+  6 [act/1] click 'SERVICES' -> True 
+  7 [act/1] click 'GALLERY' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Guests ROOM TYPE Any Room Double Superior Room Superior Matrimonial Room Family Superior Room Triple Sta

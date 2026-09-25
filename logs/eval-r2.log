@@ -1,0 +1,117 @@
+### base-clean valid=data/v3.valid.jsonl adapter=none
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 10994.75it/s]
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/none/resolve/main/adapter_config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/config.py", line 321, in _get_peft_type
+    config_file = hf_hub_download(
+                  ^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 91, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1043, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1190, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1949, in _raise_on_head_call_error
+    raise head_call_error
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6ab5d0e9-6406cbef400f0f4e54a30a22;40e21b0b-2b64-4860-85a4-171df0c22fb6)
+
+Repository Not Found for url: https://huggingface.co/none/resolve/main/adapter_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/site2tools-mvp/eval_action_acc.py", line 28, in <module>
+    model = PeftModel.from_pretrained(model, args.adapter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/peft_model.py", line 492, in from_pretrained
+    config = PEFT_TYPE_TO_CONFIG_MAPPING[PeftConfig._get_peft_type(model_id, **hf_kwargs)].from_pretrained(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/config.py", line 327, in _get_peft_type
+    raise ValueError(f"Can't find '{CONFIG_NAME}' at '{model_id}'")
+ValueError: Can't find 'adapter_config.json' at 'none'
+### e3-clean valid=data/v3.valid.jsonl adapter=artifacts/site2tools-student-17b-v3-e3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 10397.33it/s]
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ACC {"total": 640, "valid_json": 640, "decision_correct": 640, "exact_action": 496, "json_rate": 1.0, "decision_accuracy": 1.0, "exact_action_accuracy": 0.775, "_model": "Qwen/Qwen3-1.7B", "_adapter": "artifacts/site2tools-student-17b-v3-e3", "_rows": 640, "errors": [{"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 4}, "predicted": {"decision": "act", "action_index": 5}, "generated": "{\"decision\": \"act\", \"action_index\": 5}"}, {"expected": {"decision": "act", "action_index": 7}, "predicted": {"decision": "act", "action_index": 4}, "generated": "{\"decision\": \"act\", \"action_index\": 4}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 3}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 0}, "predicted": {"decision": "act", "action_index": 1}, "generated": "{\"decision\": \"act\", \"action_index\": 1}"}, {"expected": {"decision": "act", "action_index": 1}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 5}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}]}
+### e3-transfer valid=data/v3.transfer.jsonl adapter=artifacts/site2tools-student-17b-v3-e3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 10828.91it/s]
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ACC {"total": 130, "valid_json": 130, "decision_correct": 91, "exact_action": 91, "json_rate": 1.0, "decision_accuracy": 0.7, "exact_action_accuracy": 0.7, "_model": "Qwen/Qwen3-1.7B", "_adapter": "artifacts/site2tools-student-17b-v3-e3", "_rows": 130, "errors": [{"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 0}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 0}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":0}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "finish", "reason": "The page contains verifiable success evidence.", "evidence_required": ["confirmation id", "success status"]}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 0}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 0}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":0}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 0}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 0}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":0}"}, {"expected": {"decision": "request_confirmation", "reason": "This action changes external state; confirmation is required.", "action_index": 1}, "predicted": {"decision": "act", "reason": "This is the next action that advances the goal.", "action_index": 1}, "generated": "{\"decision\":\"act\",\"reason\":\"This is the next action that advances the goal.\",\"action_index\":1}"}]}
+### v1-plano valid=data/v3.valid-flatformat.jsonl adapter=artifacts/site2tools-student-17b
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 8231.44it/s]
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ACC {"total": 382, "valid_json": 382, "decision_correct": 382, "exact_action": 224, "json_rate": 1.0, "decision_accuracy": 1.0, "exact_action_accuracy": 0.5863874345549738, "_model": "Qwen/Qwen3-1.7B", "_adapter": "artifacts/site2tools-student-17b", "_rows": 382, "errors": [{"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 7}, "predicted": {"decision": "act", "action_index": 2}, "generated": "{\"decision\": \"act\", \"action_index\": 2}"}, {"expected": {"decision": "act", "action_index": 1}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 3}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 0}, "predicted": {"decision": "act", "action_index": 1}, "generated": "{\"decision\": \"act\", \"action_index\": 1}"}, {"expected": {"decision": "act", "action_index": 1}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 5}, "predicted": {"decision": "act", "action_index": 0}, "generated": "{\"decision\": \"act\", \"action_index\": 0}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}, {"expected": {"decision": "act", "action_index": 3}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}]}
+### v3-plano valid=data/v3.valid-flatformat.jsonl adapter=artifacts/site2tools-student-17b-v3
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 10993.73it/s]
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+ACC {"total": 382, "valid_json": 382, "decision_correct": 382, "exact_action": 227, "json_rate": 1.0, "decision_accuracy": 1.0, "exact_action_accuracy": 0.5942408376963351, "_model": "Qwen/Qwen3-1.7B", "_adapter": "artifacts/site2tools-student-17b-v3", "_rows": 382, "errors": [{"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 7}, "predicted": {"decision": "act", "action_index": 4}, "generated": "{\"decision\": \"act\", \"action_index\": 4}"}, {"expected": {"decision": "act", "action_index": 1}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}, {"expected": {"decision": "act", "action_index": 3}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 0}, "predicted": {"decision": "act", "action_index": 1}, "generated": "{\"decision\": \"act\", \"action_index\": 1}"}, {"expected": {"decision": "act", "action_index": 1}, "predicted": {"decision": "act", "action_index": 4}, "generated": "{\"decision\": \"act\", \"action_index\": 4}"}, {"expected": {"decision": "act", "action_index": 5}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}, {"expected": {"decision": "act", "action_index": 6}, "predicted": {"decision": "act", "action_index": 7}, "generated": "{\"decision\": \"act\", \"action_index\": 7}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 6}, "generated": "{\"decision\": \"act\", \"action_index\": 6}"}, {"expected": {"decision": "act", "action_index": 2}, "predicted": {"decision": "act", "action_index": 3}, "generated": "{\"decision\": \"act\", \"action_index\": 3}"}]}
+### base-plano valid=data/v3.valid-flatformat.jsonl adapter=none
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|██████████| 311/311 [00:00<00:00, 9248.64it/s]
+httpx.HTTPStatusError: Client error '401 Unauthorized' for url 'https://huggingface.co/none/resolve/main/adapter_config.json'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/401
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/config.py", line 321, in _get_peft_type
+    config_file = hf_hub_download(
+                  ^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_validators.py", line 91, in _inner_fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 266, in _inner
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1043, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1190, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/huggingface_hub/file_download.py", line 1949, in _raise_on_head_call_error
+    raise head_call_error
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-6ab5d517-5a1917bb4607fa083b09130f;02473eb0-3fcd-4c49-8561-5b55d6fb6a38)
+
+Repository Not Found for url: https://huggingface.co/none/resolve/main/adapter_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/site2tools-mvp/eval_action_acc.py", line 28, in <module>
+    model = PeftModel.from_pretrained(model, args.adapter)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/peft_model.py", line 492, in from_pretrained
+    config = PEFT_TYPE_TO_CONFIG_MAPPING[PeftConfig._get_peft_type(model_id, **hf_kwargs)].from_pretrained(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/site2tools-mvp/.venv/lib/python3.12/site-packages/peft/config.py", line 327, in _get_peft_type
+    raise ValueError(f"Can't find '{CONFIG_NAME}' at '{model_id}'")
+ValueError: Can't find 'adapter_config.json' at 'none'
+EVAL_DONE_R2

@@ -1,0 +1,9 @@
+meta keys: ['decision', 'target_action_id', 'target_action_index', 'state_url', 'kind', 'family', 'lang', 'scenario', 'step', 'route_length']
+decision dist: [('act', 216), ('finish', 18), ('request_confirmation', 16)]
+action_index dist: [('1', 113), ('0', 106), ('None', 18), ('2', 13)]
+candidatos: media 0 mediana 0.0 min 0 max 0 sin-dato 250
+Traceback (most recent call last):
+  File "<stdin>", line 13, in <module>
+  File "/usr/lib/python3.12/statistics.py", line 486, in mean
+    raise StatisticsError('mean requires at least one data point')
+statistics.StatisticsError: mean requires at least one data point

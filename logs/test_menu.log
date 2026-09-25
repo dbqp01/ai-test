@@ -1,0 +1,13 @@
+goal expandido -> ['breakfast', 'time']
+menu(10) = ['Home', 'Rooms', 'Gallery', 'Location', 'Contact', 'Booking.com', 'Facebook', 'Instagram', 'Double Superior Room', 'Breakfast']
+menu precio = ['Home', 'Rooms', 'Gallery', 'Location', 'Contact', 'Booking.com', 'Facebook', 'Double Superior Room', 'Deluxe Room', 'Standard Room']
+cap aplicado: 10 de 40
+orden DOM ok: ['s2t-0', 's2t-1', 's2t-3', 's2t-9']
+pick_answer ok: hora no se confunde con precio
+title no responde direccion: ok
+direccion leida de /contact/: 759 CALLE HOSPITAL
+check-in anclado: 12:00 hrs | gh-Speed Wi-Fi 24-Hour Front Desk Assistance Check-in: 12:00 hrs | Che
+wifi leido pese al guion: Complimentary Coca/Muna tea Free High-Speed Wi-Fi 24-Hour Front Desk Assistance Check-in: 
+extractiva sin navegacion: n Book Now ACCOMMODATIONS Our Rooms Each room is uniquely designed with hand-painted Andea
+puente cubre oxigeno/aeropuerto/restaurante/equipaje: OK
+TODO OK

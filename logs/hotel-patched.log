@@ -1,0 +1,7 @@
+##### precio
+status: error | reason: input_value_required | steps: 1
+  - input 'Any Room Double Superior Room Superior M' -> False input_value_required 
+evidence: 
+##### desayuno
+status: blocked | reason: no_matching_action | steps: 0
+evidence: Skip to main content USGAR HOTELS 02% ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 25 - Sep 26 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Guests ROOM TYPE Any Room Double Superior Room Superior Matrimonial Room Family Superior Room Triple Standard Room CHECK AVAILABILITY GUEST REVIEWS What Our Guests Say Hear from travelers who have experienced USGAR Hotels 8.7 / 10 (414 REVIEWS) | 8.6 / 10 (698 REVIEWS) | 8.6 / 10 (EXCELLENT) ” BOOKING.COM "The room was clean and spacious — minimalist design and very aesthetic. Breakfa

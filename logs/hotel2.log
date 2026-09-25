@@ -1,0 +1,25 @@
+SERVIDOR_OK
+##### precio: blocked reason=no_matching_action steps=5
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/16] click 'Double Superior Room' -> True 
+  2 [act/16] click 'Double Superior Room' -> True 
+  3 [None/None] click 'BOOK YOUR STAY' -> True 
+  4 [act/13] click 'SEARCH AVAILABILITY' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now Book Your Stay Please enter the primary guest details and confirm your dates to proceed to secure checkout. 1 Stay Dates & Room 2 Guest Guest Details 3 Pay Secure Payment STEP 1 OF 3 TRIP SUMMARY DIRECT BOOKING DOUBLE SUPERIOR ROOM Doble Superior 2 double beds Check-in Date 2026-09-26 Check-out Date 2026-09-29 Duration 3 nights Guests 2 Guests Total Price Breakfast included $ 195 $65 per night STANDARD RATE INC
+##### desayuno: blocked reason=no_matching_action steps=6
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/0] click 'USGAR Hotels Home' -> True 
+  2 [act/2] click 'SERVICES' -> True 
+  3 [act/2/second_best] click 'SERVICES' -> True 
+  4 [act/2/second_best] click 'SERVICES' -> True 
+  5 [act/2/second_best] click 'EXPLORE CUSCO' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now NEARBY 08 Explore Cusco Discover the wonders that await just outside your door All Historical Nature Cultural Adventure HISTORICAL 112 km 4h by train Machu Picchu The iconic Inca citadel and UNESCO World Heritage Site. One of the New Seven Wonders of the World. View Guide NATURE 15 km 30m by car Sacred Valley of the Incas A picturesque valley dotted with traditional Inca villages, agricultural terraces, and imp
+##### wifi: budget_exhausted reason= steps=8
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/1/second_best] click 'ROOMS' -> True 
+  2 [act/1/second_best] click 'ROOMS' -> True 
+  3 [act/1/second_best] click 'SERVICES' -> True 
+  4 [act/2/second_best] click 'SERVICES' -> True 
+  5 [act/2/second_best] click 'SERVICES' -> True 
+  6 [act/1/second_best] click 'ROOMS' -> True 
+  7 [act/1/second_best] click 'ROOMS' -> True 

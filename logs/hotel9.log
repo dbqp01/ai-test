@@ -1,0 +1,26 @@
+esperando servidor con artifacts/site2tools-student-17b-v4
+SERVIDOR_OK
+{
+  "ok": true,
+  "service": "site2tools",
+##### precio-doble-superior: answered steps=2 15s
+  RESPUESTA: precio = $90
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### desayuno-hora: answered steps=2 5s
+  RESPUESTA: hora = 06:00 AM
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+##### checkin-hora: answered steps=4 9s
+  RESPUESTA: hora = 6:00
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now Book Your Stay Please enter the primary guest details and confirm your dates to proceed to secure checkout. 1 Stay Dates & Room 2 Gues
+##### direccion: budget_exhausted steps=8 43s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now FACILITIES & ACCOMMODATIONS 06 Photo Gallery Discover the beauty and details of USGAR Hotels in San Pedro, Cusco All Photos Hotel & Ar
+##### telefono: answered steps=2 6s
+  RESPUESTA: telefono = +51 992 559 943
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+##### wifi-clave: budget_exhausted steps=8 15s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+##### piscina: budget_exhausted steps=8 16s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### room-types: budget_exhausted steps=8 33s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Se
+=== TASA: 4/8 concluyen, 4/8 con respuesta literal ===

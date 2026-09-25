@@ -1,0 +1,4 @@
+check-in: {'kind': 'check-in', 'value': '12:00', 'source': 'jsonld'}
+wifi-clave (debe ser None): None
+atajo wifi-clave: {'kind': 'wifi-clave', 'value': 'el sitio anuncia wifi gratis pero no publica la clave', 'source': 'structured:wifi_sin_clave'}
+TODO ESTRUCTURADO OK

@@ -1,0 +1,23 @@
+esperando servidor con artifacts/site2tools-student-17b-v4
+SERVIDOR_OK
+{
+  "ok": true,
+  "service": "site2tools",
+##### precio-doble-superior: answered steps=2 16s
+  RESPUESTA: precio = $90
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### desayuno-hora: answered steps=0 1s
+  RESPUESTA: desayuno-hora = 6:00 AM to 9:00 AM
+##### checkin-hora: answered steps=0 1s
+  RESPUESTA: check-in = 12:00
+##### direccion: answered steps=0 1s
+  RESPUESTA: direccion = 759 Calle Hospital, Cusco, Cusco, 08002, PE
+##### telefono: answered steps=0 1s
+  RESPUESTA: telefono = +51992559943
+##### wifi-clave: budget_exhausted steps=8 29s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now NEARBY 08 Explore Cusco Discover the wonders that await just outside your door All Historical Nature Cultural Adventure HISTORICAL 112
+##### piscina: budget_exhausted steps=8 17s
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that c
+##### room-types: answered steps=0 1s
+  RESPUESTA: room-types = Double Superior Room | Superior Matrimonial Room | Family Superior Room | Triple Standard Room
+=== TASA: 6/8 concluyen, 6/8 con respuesta literal ===

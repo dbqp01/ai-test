@@ -1,0 +1,9 @@
+=== pipeline v5 Fri Sep 25 03:24:45 UTC 2026 ===
+import OK
+--- paso 1: recolectar trayectorias SIN atajo estructurado ---
+atajo restaurado: 10120 bytes
+--- paso 2: minar filas por hindsight ---
+observaciones indexadas: 148
+stats: {'trayectorias': 8, 'con_respuesta': 5, 'act': 1, 'finish': 5} -> filas escritas: 6 en data/v5.hindsight.jsonl
+filas minadas: 6
+ABORT: menos de 20 filas, no merece un entrenamiento

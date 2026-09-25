@@ -1,0 +1,45 @@
+SERVIDOR_OK
+##### precio-doble-superior: answered steps=2 25s
+  RESPUESTA: precio = $90 | All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUESTS Superior Matrimonial Room 
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/3] click 'Double Superior Room' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now ACCOMMODATIONS 03 Our Rooms Each room is uniquely designed with hand-painted Andean murals, warm lighting, and artisan textiles that celebrate Cusco's cultural heritage. All Rooms 2 Guests 3 Guests 4 Guests 7 Guest
+##### desayuno-hora: answered steps=2 6s
+  RESPUESTA: hora = 06:00 AM | edients in the historic heart of Cusco. 100% - Included in Stay 01 Daily Buffet Breakfast 06:00 AM - 09:00 AM 02 Coca & Muna Station 24 HOURS 03 Evening Cafeteria UNTIL 22:00 PM OU
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/1/second_best] click 'SERVICES' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Gues
+##### checkin-hora: blocked steps=2 7s
+  0 [act/1] click 'ROOMS' -> True 
+  1 [act/8/second_best] click 'Book Now' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now Book Your Stay Please enter the primary guest details and confirm your dates to proceed to secure checkout. 1 Stay Dates & Room 2 Guest Guest Details 3 Pay Secure Payment STEP 1 OF 3 TRIP SUMMARY DIRECT BOOKING Che
+##### direccion: budget_exhausted steps=8 18s
+  4 [act/2/second_best] click 'SERVICES' -> True 
+  5 [act/0/second_best] click 'USGAR Hotels Home' -> True 
+  6 [act/3] click 'EN' -> True 
+  7 [act/3/second_best] click 'Espanol' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN English Espanol Francais Portugues Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guest
+##### telefono: answered steps=2 6s
+  RESPUESTA: telefono = +51992559943 | eam for direct reservations, private airport transfers, or travel advice. WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I s
+  0 [act/5] click 'CONTACT' -> True 
+  1 [act/7/second_best] click 'Call Front Desk +51 992 559 943' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now 759 CALLE HOSPITAL, CUSCO Contact Us & Plan Your Trip We would love to hear from you. Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice. WhatsApp Direct +519925599
+##### wifi-clave: budget_exhausted steps=8 18s
+  4 [act/5/second_best] click 'EN' -> True 
+  5 [act/5/second_best] click 'English' -> True 
+  6 [act/8/second_best] click 'All Photos' -> True 
+  7 [act/5/second_best] click 'Toggle dark mode' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now FACILITIES & ACCOMMODATIONS 06 Photo Gallery Discover the beauty and details of USGAR Hotels in San Pedro, Cusco All Photos Hotel & Areas Rooms VIDEO TOUR VIDEO TOUR VIDEO TOUR VIDEO TOUR USGAR NEWSLETTER Travel no
+##### piscina: budget_exhausted steps=8 17s
+  4 [act/2/second_best] click 'SERVICES' -> True 
+  5 [act/1/second_best] click 'GALLERY' -> True 
+  6 [act/0/second_best] click 'USGAR Hotels Home' -> True 
+  7 [act/1] click 'SERVICES' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Gues
+##### room-types: budget_exhausted steps=8 34s
+  4 [act/7] click 'Superior Matrimonial Room' -> True 
+  5 [act/0] click 'USGAR Hotels Home' -> True 
+  6 [act/1] click 'SERVICES' -> True 
+  7 [act/1] click 'EXPLORE CUSCO' -> True 
+  evidencia: Skip to main content ROOMS SERVICES EXPLORE CUSCO GALLERY CONTACT EN Sign In Book Now LOADING VIDEO… USGAR Hotels San Pedro, Cusco - Your gateway to the Andes Book Your Stay Explore Rooms CHECK-IN - CHECK-OUT Sep 26 - Sep 27 GUESTS 1 Guest 2 Guests 3 Guests 4 Guests 5 Guests 6 Guests 7 Guests 8 Gues
+=== TASA: 3/8 concluyen, 3/8 con respuesta literal ===

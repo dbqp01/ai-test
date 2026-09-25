@@ -1,0 +1,15 @@
+SERVIDOR_OK adapter=artifacts/site2tools-student-17b-v4
+policy-adapter artifacts/site2tools-student-17b-v4
+##### precio-doble-superior: answered steps=2 14s
+  RESPUESTA: precio = $90
+##### desayuno-hora: answered steps=2 5s
+  RESPUESTA: hora = 06:00 AM
+##### checkin-hora: answered steps=4 9s
+  RESPUESTA: hora = 6:00
+##### direccion: budget_exhausted steps=8 39s
+##### telefono: answered steps=1 3s
+  RESPUESTA: telefono = +51 992 559 943
+##### wifi-clave: budget_exhausted steps=8 13s
+##### piscina: budget_exhausted steps=8 15s
+##### room-types: budget_exhausted steps=8 48s
+=== TASA artifacts/site2tools-student-17b-v4: 4/8 concluyen, 4/8 con respuesta literal ===
