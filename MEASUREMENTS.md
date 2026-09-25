@@ -48,3 +48,18 @@ Cuanto no gana tiempo, si no memoria; la via para latencia seria GGUF/llama.cpp,
 - Respuestas extractivas: se descarta texto de terceros (caruseles de resenas) aunque contenga la
   palabra buscada, y se separa la "costura" que innerText pega entre si. Ver `test_menu.py`.
 - Precio anclado a la tarjeta preguntada, no a la primera moneda de la pagina.
+
+## 5. Limitacion conocida, medida y abierta: `ubicacion-barrio` responde con basura pegada
+El valor devuelto contiene el dato correcto ("The courtyard, San Pedro") precedido de la cabecera de
+contacto. No es un descuido de ventana: el divisor de frases exige whitespace **detras** del
+separador, asi que el `innerText` de esa pagina llega como un unico chunk corrido de ~158
+caracteres, y **ese mismo chunk es lo que le permite superar el suelo del extractor**
+(`>=25` caracteres y `>=5` palabras).
+
+Intentado y medido tres veces, con el prompt probatoriamente intacto en la ultima: partir por `\n` y
+dar al extractor el texto con fronteras de bloque baja el benchmark de **16/16 y 15 respuestas a
+15/16 y 14**, porque la evidencia del barrio pasa a ser una linea de 24 caracteres que el suelo
+descarta. Granularidad y suelo son un unico ajuste acoplado: arreglarlo pide re-definir que cuenta
+como evidencia minima a nivel de linea sin admitir la basura que el suelo excluye hoy ("Book Now",
+"Our Rooms", "Skip to main content") y volver a medir. Queda congelado en `test_menu.py` como test de
+caracterizacion, incluida la cabecera pegada, para que el pendiente no se pierda.
