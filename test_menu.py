@@ -197,4 +197,26 @@ for nombre, pagina in (("dobles primero", DOBLE_PRIMERO), ("otra primero", OTRA_
     got = pick_answer("Cual es el precio por noche de la habitacion Doble Superior", pagina)
     assert got and got["value"] == "$90", (nombre, got)
 print("precio anclado a la habitacion preguntada: OK")
+
+# --- costura del carrusel: cola de resena + ticker + dato propio pegados (texto real) ---
+# innerText del sitio entrega esto como UN chunk de ~290 caracteres: la ultima frase de una
+# resena, el ticker de destinos separado por ✦ y, pegado despues del ultimo glifo, el nombre
+# propio del restaurante. Antes respondia con la frase del huesped.
+COSTURA = ('The service provided is exceptional." T Team MEXICO / 2026 ✦ San Pedro ✦ Cusco '
+           '✦ Machu Picchu ✦ Sacred Valley ✦ CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable '
+           'culinary journey with fresh Andean ingredients in the historic heart of Cusco.')
+assert len(COSTURA) < 320, len(COSTURA)
+got = pick_answer("Que restaurante tiene el hotel", COSTURA)
+assert got and "auka" in got["value"].lower(), got
+assert "exceptional" not in got["value"].lower(), got
+print("costura de resena separada del dato propio: OK")
+
+# --- y la marca que descalifica puede estar a dos chunks de la cita ---
+# El splitter parte por ". " asi que "We had to leave at 4am..." llega como chunk limpio, sin
+# Booking.com dentro; con el descarte solo por chunk se colaba como horario del desayuno.
+CITA_LEJOS = ('BOOKING.COM "The hospitality of the staff. The cleanliness and warmth of the room. '
+              'We had to leave at 4am for our tour - they packed breakfast for all of us. '
+              'That was so impressive." C Chul BRAZIL / 2026')
+assert pick_answer("A que hora se sirve el desayuno", CITA_LEJOS) is None, CITA_LEJOS
+print("cita cuya marca cae fuera del chunk tambien se descarta: OK")
 print("TODO OK")

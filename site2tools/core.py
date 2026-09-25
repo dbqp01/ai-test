@@ -55,6 +55,49 @@ GENERIC_GOAL_WORDS = {"hotel", "hoteles", "hostal", "page", "pages", "website", 
 # courtyard"` de una reseña. No se descarta (a veces es lo único), se penaliza para que una frase
 # propia del sitio gane cuando exista.
 REVIEW_MARKERS = ("booking.com", "tripadvisor", "google", "guests say", "what our guests", "verified")
+# Radio en el que se busca el sello de resena, mas ancho que la ventana que se devuelve: el
+# carrusel del sitio pone "BOOKING.COM" despues de la cita, no dentro de ella.
+REVIEW_SCAN_RADIUS = 400
+
+# Glifos ornamentales medidos en usgarhoteles.com: el ticker de destinos ("San Pedro ✦ Cusco ✦
+# Machu Picchu ✦ ...") y el cierre del carrusel de resenas los usan como costura entre bloques
+# que innerText llega pegados. Dividir por ellos separa la cola de una resena ajena del dato
+# propio que viene justo despues. Solo los dos que se ven en el sitio: el punto medio "·" y el
+# rombo si se llegaran a medir, porque cada glifo anadido tambien relaja el descarte de resenas.
+ORNAMENT_SEPARATORS = "\u2726\u2022"
+
+
+def ornament_segments(text: str, base: int) -> list[tuple[int, int, str]]:
+    """`text` partido por glifos ornamentales, con offsets absolutos dentro del cuerpo.
+
+    Un solo segmento cuando no hay ningun glifo: la costura existe o no existe, y de eso depende
+    que el candidato (y por tanto su contexto de descarte) sea el bloque entero o una pieza.
+    """
+    out: list[tuple[int, int, str]] = []
+    pos = 0
+    for m in re.finditer("[" + ORNAMENT_SEPARATORS + "]", text):
+        out.append((base + pos, base + m.start(), text[pos:m.start()]))
+        pos = m.end()
+    out.append((base + pos, base + len(text), text[pos:]))
+    return [g for g in out if len(clean(g[2])) >= 25] or [(base, base + len(text), text)]
+
+
+def review_region(body: str, start: int, end: int) -> str:
+    """Contexto que puede descalificar el chunk `body[start:end]` como palabra de un tercero.
+
+    El radio a pelo sobre el interior del texto era demasiado corto y demasiado largo a la vez:
+    "We had to leave at 4am for our tour - they packed breakfast for all of us." llega como chunk
+    sin marca dentro (su "BOOKING.COM" esta dos chunks antes), mientras que el bloque propio
+    "CULINARY & COFFEE 04 AUKA RESTOBAR..." quedaba descartado por un BOOKING.COM de la resena
+    anterior. El glifo ornamental es la costura real entre bloques, asi que se recorta por el y
+    se le pone techo de radio para que una pagina sin adornos no herede el carrusel entero.
+    """
+    lo = max((body.rfind(g, 0, start) for g in ORNAMENT_SEPARATORS), default=-1) + 1
+    after = [h for h in (body.find(g, end) for g in ORNAMENT_SEPARATORS) if h >= 0]
+    hi = min(after, default=len(body))
+    lo = max(lo, start - REVIEW_SCAN_RADIUS)
+    hi = min(hi, end + REVIEW_SCAN_RADIUS)
+    return body[lo:max(lo, hi)]
 
 
 TIME_ANCHORS = ("breakfast", "desayuno", "check-in", "checkin", "check in", "check-out", "checkout",
@@ -103,7 +146,15 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
     # Primero el cuerpo: los ~400 primeros caracteres de este sitio son navegación y title, y el
     # title ("USGAR Hotels | San Pedro, Cusco - Your gateway to the Andes") respondía `direccion`.
     for body in ((text or "")[400:], (text or "")):
-        for chunk in re.split(r"(?<=[.!?\n])\s+", body):
+        # Con offsets, no con re.split: hay que saber donde cae cada chunk dentro del cuerpo para
+        # poder mirar su contexto antes de aceptarlo como evidencia.
+        pieces: list[tuple[int, str]] = []
+        pos = 0
+        for sep in re.finditer(r"(?<=[.!?\n])\s+", body):
+            pieces.append((pos, body[pos:sep.start()]))
+            pos = sep.end()
+        pieces.append((pos, body[pos:]))
+        for start, chunk in pieces:
             s = clean(chunk)
             if len(s) < 25:
                 continue
@@ -118,6 +169,24 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
             # cualquier title del sitio casaba con cualquier pregunta.
             if not hits:
                 continue
+            # Costura: el innerText del sitio pega en un mismo chunk de ~290 caracteres la cola de
+            # una resena de Booking, el ticker de destinos y el dato propio ("CULINARY & COFFEE 04
+            # AUKA RESTOBAR, An unforgettable culinary journey..."). Se candidatea por segmento, que
+            # es lo que tambien acota el contexto con el que se le puede descalificar.
+            segs = ornament_segments(chunk, start)
+            a, b = segs[0][0], segs[0][1]
+            if len(segs) > 1:
+                a, b, _ = max(segs, key=lambda g: (len((gt & tokens(clean(g[2]).replace("-", "")))
+                                                       - GENERIC_GOAL_WORDS), len(g[2])))
+                s = clean(body[a:b])
+                words = tokens(s.replace("-", ""))
+                hits = (gt & words) - GENERIC_GOAL_WORDS
+                if len(s) < 25 or len(words) < 4 or not hits:
+                    continue
+            # El sello que descalifica puede caer fuera del candidato: "We had to leave at 4am for
+            # our tour - they packed breakfast for all of us." llega como chunk limpio, sin marca
+            # dentro, y su "BOOKING.COM" esta unos metros antes en el cuerpo.
+            scan = review_region(body, a, b).lower()
             if len(s) > 320:
                 # El innerText de una SPA llega casi sin puntos: "Evening Cafeteria" vivía dentro
                 # de un bloque de miles de caracteres que el viejo tope de 320 rechazaba entero, y
@@ -129,7 +198,10 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
                 if not positions:
                     continue
                 first = min(positions)
-                s = clean(chunk[max(0, first - 120): first + 190])
+                lo = max(0, first - 120)
+                hi = min(b - a, first + 190)
+                s = clean(body[a + lo: a + hi])
+                scan = review_region(body, a + lo, a + hi).lower()
                 words = tokens(s.replace("-", ""))
                 hits = (gt & words) - GENERIC_GOAL_WORDS
                 if len(s) < 25 or len(words) < 4 or not hits:
@@ -138,7 +210,7 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
             # con el texto de un huésped en Booking.com. Penalizar no arreglaba nada cuando no hay
             # otra candidata, así que se descarta y se prefiere `None` (y que el operador siga
             # buscando) antes que afirmar con palabras de un tercero.
-            if any(marker in s.lower() for marker in REVIEW_MARKERS):
+            if any(marker in scan for marker in REVIEW_MARKERS):
                 continue
             score = len(hits) / (1.0 + 0.03 * len(words))
             if best is None or score > best[0]:
