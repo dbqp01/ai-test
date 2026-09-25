@@ -83,6 +83,15 @@ ese tipo de pagina, no una promesa universal. Re-verificado con el denominador c
 dividia por N en vez de por las filas evaluadas: resulto ser `evaluadas == N`, o sea que la cifra no
 cambiaba, pero el bug estaba ahi).
 
+**El numero se sostiene fuera de la categoria Travel (medido despues de escribir la limitacion de
+arriba):** con `data/m2w2.train.jsonl`, que es **Shopping (999) + Entertainment (501)**, la
+sobreafirmacion sale **7,7 %** (116/1500) frente al 8,1 % de Travel. Misma magnitud en tres
+categorias, asi que el 8 % es una propiedad del heuristico y no un artefacto del muestreo. El desglose
+por tipo ademas dice donde mirar: en Travel el residuo era casi todo `extractiva` (prosa de UI),
+mientras que en Shopping/Entertainment se cuelan los **patrones** — `precio` 23, `hora` 11,
+`correo` 9. En e-commerce el cromo tambien lleva precios, horarios y correos de boletin, y esos tres
+patrones no exigen el contexto que si pide `anchored_price`. Siguiente paso concreto, sin hacer.
+
 El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
 procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
 
