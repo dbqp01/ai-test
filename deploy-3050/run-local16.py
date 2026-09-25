@@ -68,6 +68,7 @@ for label, goal in GOALS:
     if ans:
         print("   R:", ans.get("kind"), "=", str(ans.get("value"))[:160], flush=True)
     rows.append({"label": label, "goal": goal, "status": st, "answer": ans,
+                 "survey_pages": res.get("survey_pages"), "survey_chars": res.get("survey_chars"),
                  "steps": len(res.get("steps") or []), "seconds": round(time.time() - t0, 1)})
     # Se guarda tras cada objetivo, no al final: un fallo en el print no debe costar la corrida.
     OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -87,3 +88,6 @@ sin_proc = [r["label"] for r in rows
 if sin_proc:
     print("RESPUESTAS SIN PROCEDENCIA (revisar antes de afirmar que no hay invencion):", sin_proc,
           flush=True)
+for r in [x for x in rows if x["status"] == "not_found_in_survey"]:
+    print("   ausencia %s afirmada sobre %d paginas / %d caracteres leidos"
+          % (r["label"], r.get("survey_pages") or 0, r.get("survey_chars") or 0), flush=True)

@@ -10,8 +10,10 @@
    "source_url": "https://usgarhoteles.com/rooms/",
    "verbatim": true
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 1,
-  "seconds": 11.7
+  "seconds": 16.4
  },
  {
   "label": "desayuno-hora",
@@ -25,8 +27,10 @@
    "source_field": "faq:Is breakfast included and what time is it served?",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.7
+  "seconds": 1.6
  },
  {
   "label": "checkin-hora",
@@ -40,8 +44,10 @@
    "source_field": "jsonld",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 1.6
  },
  {
   "label": "checkout-hora",
@@ -55,8 +61,10 @@
    "source_field": "jsonld",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 1.6
  },
  {
   "label": "direccion",
@@ -70,8 +78,10 @@
    "source_field": "jsonld",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.7
+  "seconds": 1.6
  },
  {
   "label": "telefono",
@@ -85,8 +95,10 @@
    "source_field": "jsonld",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 1.6
  },
  {
   "label": "correo",
@@ -99,8 +111,10 @@
    "source_url": "https://usgarhoteles.com/",
    "verbatim": true
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 1,
-  "seconds": 13.8
+  "seconds": 19.9
  },
  {
   "label": "room-types",
@@ -114,8 +128,10 @@
    "source_field": "select:room-type",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.7
+  "seconds": 1.6
  },
  {
   "label": "wifi-clave",
@@ -129,16 +145,20 @@
    "source_field": "structured:wifi_sin_clave",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 1.9
+  "seconds": 4.3
  },
  {
   "label": "piscina",
   "goal": "Tiene piscina el hotel",
   "status": "not_found_in_survey",
   "answer": {},
+  "survey_pages": 5,
+  "survey_chars": 14786,
   "steps": 8,
-  "seconds": 71.8
+  "seconds": 99.9
  },
  {
   "label": "gastronomia",
@@ -151,8 +171,10 @@
    "source_url": "https://usgarhoteles.com/#services",
    "verbatim": true
   },
-  "steps": 2,
-  "seconds": 23.2
+  "survey_pages": null,
+  "survey_chars": null,
+  "steps": 3,
+  "seconds": 57.0
  },
  {
   "label": "ubicacion-barrio",
@@ -165,8 +187,10 @@
    "source_url": "https://usgarhoteles.com/contact/",
    "verbatim": true
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 1,
-  "seconds": 10.1
+  "seconds": 17.7
  },
  {
   "label": "idiomas",
@@ -179,8 +203,10 @@
    "source_url": "https://usgarhoteles.com/contact/",
    "verbatim": true
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 1,
-  "seconds": 10.2
+  "seconds": 15.2
  },
  {
   "label": "aeropuerto",
@@ -194,8 +220,10 @@
    "source_field": "faq:Do you offer airport or train station transfers?",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 1.6
  },
  {
   "label": "equipaje",
@@ -209,8 +237,10 @@
    "source_field": "faq:What are the check-in and check-out times?",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 1.6
  },
  {
   "label": "oxigeno",
@@ -224,7 +254,9 @@
    "source_field": "faq:How can I prevent altitude sickness (soroche)?",
    "verbatim": false
   },
+  "survey_pages": null,
+  "survey_chars": null,
   "steps": 0,
-  "seconds": 0.7
+  "seconds": 1.6
  }
 ]

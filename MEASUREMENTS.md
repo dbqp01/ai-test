@@ -27,8 +27,11 @@ valid mayor que el train).
 techo, modelo v4 cargado en la GPU local: ver `deploy-3050/bench16-local.json`.
 
 - **16/16 concluyen** (ninguno se queda colgado ni agota el presupuesto sin veredicto).
-- **15/16 con respuesta**, y la unica ausencia es honesta y acotada a lo recorrido
-  (`not_found_in_survey` para "tiene piscina": el sitio no publica piscina).
+- **15/16 con respuesta**, y la unica ausencia es honesta y **acotada a lo recorrido**:
+  `not_found_in_survey` para "tiene piscina" declarado sobre **5 paginas distintas y 14.786
+  caracteres leidos** (`survey_pages`/`survey_chars` en la fila del JSON). El numero pequeno es
+  informativo a proposito: una ausencia afirmada sobre poco texto vale menos que una afirmada sobre
+  el sitio entero, y el operador prefiere no gastar pasos inventando cobertura.
 - **0 respuestas inventadas, y eso esta comprobado a maquina**: cada respuesta lleva
   `source_url`, y `stamp_evidence()` exige que el valor devuelto aparezca tal cual en el
   `innerText` de una pagina recorrida. Desglose de esa cifra, porque los dos grados no son

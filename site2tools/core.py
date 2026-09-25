@@ -1348,8 +1348,7 @@ class UniversalOperator:
                     # El bench de 16 objetivos (25-sep) pilló este bug: con el puente es->en sin
                     # "oxigeno"/"aeropuerto"/"gastronomia", los terminos buscados eran solo
                     # espanoles, no casaban con un sitio en ingles, y el operador afirmaba
-                    # "aqui no esta publicado" cuando el dato SI esta (oxygen/airport/restaurant
-                    # presentes en las 1556 trazas). Sin cobertura del puente no se puede afirmar
+                    # "aqui no esta publicado" cuando el dato SI estaba (oxygen/airport/restaurant
                     # presentes en las 1556 trazas). Sin cobertura del puente no se puede afirmar
                     # ausencia: solo que no se encontró.
                     english = {w for value in ES_EN.values() for w in value.split()}
@@ -1360,5 +1359,9 @@ class UniversalOperator:
                     result["bridge_covered"] = bridged
                     result["searched_terms"] = terms
                     result["pages_surveyed"] = sorted(set(pages_seen))
+                    # El alcance del recorrido es parte de la afirmacion: "no esta publicado"
+                    # después de 2 paginas no vale lo mismo que despues de 8 y 40.000 caracteres.
+                    result["survey_pages"] = len(set(pages_seen))
+                    result["survey_chars"] = len(own_text)
             JsonStore(self.data_dir).append("operations.jsonl", result)
             return result
