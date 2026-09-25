@@ -92,6 +92,17 @@ mientras que en Shopping/Entertainment se cuelan los **patrones** — `precio` 2
 `correo` 9. En e-commerce el cromo tambien lleva precios, horarios y correos de boletin, y esos tres
 patrones no exigen el contexto que si pide `anchored_price`. Siguiente paso concreto, sin hacer.
 
+**Pista exacta de por donde seguir (medida, no hipotetizada):** al hacer estricto `precio` (devolver
+`anchored_price` o nada, como ya hace `hora`) la fuga baja de 13,1 % a **9,4 %** en la cubeta de dato
+(46 -> 33 de 351, las 19 eran `"$ 0"` colandose por el regex crudo de abajo). Pero el gate del hotel
+se pone **rojo**: `anchored_price` devuelve `None` en las dos cadenas de prueba de tarjetas pegadas
+(`precio anclado a la habitacion preguntada`), o sea que el `$90` que se consideraba anclado salia en
+realidad del regex crudo. **El anclaje de precio esta mas roto de lo que parecia, y tapado por su
+propio fallback.** Por eso el cambio esta revertido: sin depurar `anchored_price` se perderia la
+respuesta de precio del hotel. Orden correcto: arreglar el anclaje (por que `score >= 2` no casa con
+"01 / 04 Double Superior Room FROM $90 PER NIGHT"), ver el gate verde, y solo entonces quitar el
+fallback crudo.
+
 **Correccion del metrica, y va en contra de mi propio numero:** al mirar los casos uno por uno, parte
 de lo contado como "sobreafirmacion" eran **respuestas correctas** ("$349" a *what is the purchase
 price for powerwalls*, "$99" a *search for a grey sports car*, "$5" a *find metformin price*). Tratar
