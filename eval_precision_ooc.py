@@ -36,9 +36,18 @@ if ruta is None:
 filas = [json.loads(l) for l in ruta.open(encoding="utf-8")]
 rng.shuffle(filas)
 
+# Un objetivo es "de dato" si pide explicitamente una magnitud (precio, hora, telefono, direccion,
+# cantidad). Medido tras publicar el 8,1%: varios de los casos contados como sobreafirmacion eran
+# RESPUESTAS CORRECTAS ("$349" a "what is the purchase price for powerwalls", "$99" a "search for a
+# grey sports car"), o sea que tratar todo objetivo Mind2Web de "accion" hincha el numero. Se
+# reportan las dos cubetas aparte y la cifra que vale es la de ACCION.
+DE_DATO = re.compile(r"\b(price|cost|how much|cuanto|cuánto|hour|time|hours|open|close|closes|"
+                     r"phone|number|email|e-mail|address|where|donde|dónde|rating|score|fee)\b", re.I)
+
 sitios = {}
 respondidas = 0
 evaluadas = 0
+dato_afirmadas = dato = accion_afirmadas = accion = 0
 ejemplos = []
 for fila in filas[:N]:
     try:
@@ -51,6 +60,11 @@ for fila in filas[:N]:
     if len(goal) < 12 or len(texto) < 200:
         continue
     evaluadas += 1
+    es_dato = bool(DE_DATO.search(goal))
+    if es_dato:
+        dato += 1
+    else:
+        accion += 1
     categoria = str((fila.get("meta") or {}).get("domain") or "sin-categoria")
     sitios[categoria] = sitios.get(categoria, 0) + 1
     try:
@@ -60,6 +74,10 @@ for fila in filas[:N]:
         continue
     if ans and ans.get("value"):
         respondidas += 1
+        if es_dato:
+            dato_afirmadas += 1
+        else:
+            accion_afirmadas += 1
         if len(ejemplos) < 24:
             valor = clean(ans["value"])[:110]
             verbatim = re.sub(r"\s+", " ", valor).lower() in re.sub(r"\s+", " ", texto).lower()
@@ -68,13 +86,19 @@ for fila in filas[:N]:
 
 print(f"filas leidas: {min(N, len(filas))} | evaluadas: {evaluadas} | categorias: "
       + ", ".join(f"{s}={c}" for s, c in sorted(sitios.items(), key=lambda kv: -kv[1])[:6]))
-print(f"la heuristica_afirmo_algo en {respondidas} de {evaluadas} objetivos de ACCION "
+print(f"la heuristica_afirmo_algo en {respondidas} de {evaluadas} objetivos "
       f"({100.0 * respondidas / max(1, evaluadas):.1f}%)")
+print(f"   ACCION (la cifra que vale): {accion_afirmadas}/{accion} "
+      f"= {100.0 * accion_afirmadas / max(1, accion):.1f}%   "
+      f"| DE DATO (puede ser correcta): {dato_afirmadas}/{dato} "
+      f"= {100.0 * dato_afirmadas / max(1, dato):.1f}%")
 print("--- muestras para clasificar a mano ---")
 for kind, lit, goal, valor, url in ejemplos[:18]:
     print(f"  [{kind}|{lit}] {url}\n     goal: {goal}\n     resp: {valor}")
 
-porcentaje = 100.0 * respondidas / max(1, evaluadas)
+# El guard se evalua contra la cubeta de ACCION: es la unica donde "afirmo algo" es falso por
+# definicion. La mezcla con "de dato" castiga respuestas correctas.
+porcentaje = 100.0 * accion_afirmadas / max(1, accion)
 if MAXIMO is not None:
     if porcentaje > MAXIMO:
         print(f"FALLO: sobreafirmacion {porcentaje:.1f}% por encima del tope {MAXIMO:.1f}%")

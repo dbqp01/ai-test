@@ -92,6 +92,13 @@ mientras que en Shopping/Entertainment se cuelan los **patrones** — `precio` 2
 `correo` 9. En e-commerce el cromo tambien lleva precios, horarios y correos de boletin, y esos tres
 patrones no exigen el contexto que si pide `anchored_price`. Siguiente paso concreto, sin hacer.
 
+**Correccion del metrica, y va en contra de mi propio numero:** al mirar los casos uno por uno, parte
+de lo contado como "sobreafirmacion" eran **respuestas correctas** ("$349" a *what is the purchase
+price for powerwalls*, "$99" a *search for a grey sports car*, "$5" a *find metformin price*). Tratar
+todo objetivo de Mind2Web como "de accion" hinchaba la cifra, asi que el script ahora separa las dos
+cubetas y **el 8,1 % pasa a ser una cota superior**; la que significa algo es la de ACCION pura (el
+guard del gate evalua esa, no la mezcla).
+
 El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
 procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
 
