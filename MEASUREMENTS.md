@@ -50,16 +50,17 @@ Cuanto no gana tiempo, si no memoria; la via para latencia seria GGUF/llama.cpp,
 - Precio anclado a la tarjeta preguntada, no a la primera moneda de la pagina.
 
 ## 5. Limitacion conocida, medida y abierta: `ubicacion-barrio` responde con basura pegada
-El valor devuelto contiene el dato correcto ("The courtyard, San Pedro") precedido de la cabecera de
-contacto. No es un descuido de ventana: el divisor de frases exige whitespace **detras** del
-separador, asi que el `innerText` de esa pagina llega como un unico chunk corrido de ~158
-caracteres, y **ese mismo chunk es lo que le permite superar el suelo del extractor**
-(`>=25` caracteres y `>=5` palabras).
+**RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San
+Pedro"), y lo que impedia partirla era el suelo del extractor (>=25 caracteres y >=5 palabras),
+calibrado para el megachunk colapsado. Simulado sobre el /contact/ real: de las cinco piezas del
+bloque solo una trae el termino distintivo del objetivo, y el relleno de navegacion ninguno. Con
+dos vistas del innerText (prompt colapsado / extractor con fronteras de bloque) y suelo de 12
+caracteres y 3 palabras, la corrida queda en **16/16, 15 respuestas, 15 con procedencia** y
+`ubicacion-barrio` = "The courtyard, San Pedro".
 
-Intentado y medido tres veces, con el prompt probatoriamente intacto en la ultima: partir por `\n` y
-dar al extractor el texto con fronteras de bloque baja el benchmark de **16/16 y 15 respuestas a
-15/16 y 14**, porque la evidencia del barrio pasa a ser una linea de 24 caracteres que el suelo
-descarta. Granularidad y suelo son un unico ajuste acoplado: arreglarlo pide re-definir que cuenta
-como evidencia minima a nivel de linea sin admitir la basura que el suelo excluye hoy ("Book Now",
-"Our Rooms", "Skip to main content") y volver a medir. Queda congelado en `test_menu.py` como test de
-caracterizacion, incluida la cabecera pegada, para que el pendiente no se pierda.
+Abierto en su lugar, y mas pequeno: `gastronomia` contesto "Cafeteria open until 10:00 pm" en vez de
+nombrar **AUKA RESTOBAR**, porque el puntuador prefiere la pieza mas densa entre dos con un solo
+termino comun. Desempatar por cantidad de nombre propio (`proper_tokens`, 0 vs 6 en las dos piezas
+candidatas) **se midio y fallo**: sobre la pagina completa eligio la descripcion del desayuno, que
+tambien trae "coffee" y un capitalizado. Revertido; hace falta una senal mas especifica que "hay
+nombres propios aqui".
