@@ -245,4 +245,20 @@ assert a["verbatim"] is True, a
 b = stamp_evidence({"kind": "extractiva", "value": "un valor que no esta en ningun lado"}, PAGINAS)
 assert b["source_url"] is None and b["verbatim"] is False, b
 print("procedencia verificada o declarada ausente: OK")
+# --- caracterizacion medida del defecto que queda en `ubicacion-barrio` ---
+# El divisor de frases exige whitespace DETRAS del separador, asi que un salto de linea a secas
+# no parte nada: el innerText de /contact/ del hotel llega como un unico chunk de ~158 caracteres
+# y por eso la evidencia sale con la cabecera de contacto pegada. Desde ahi la corrida medida:
+# 16/16 concluyen y 15 con respuesta.
+# Intentar lo contrario (partir por \n y dar al extractor el texto con fronteras de bloque, con el
+# prompt intacto) baja a 15/16 y 14 respuestas: la linea del barrio tiene 24 caracteres y 4 palabras
+# y el suelo del extractor (>=25 y >=5) la descarta. Es decir: la granularidad y el suelo forman un
+# unico ajuste, y nadie deberia tocar uno sin re-medir el otro. Test de caracterizacion, no de deseo.
+SALTO = chr(10)
+LINEA = ("WhatsApp Direct +51992559943" + SALTO + "The courtyard, San Pedro" + SALTO
+         + "Arrival FAQs" + SALTO)
+got = pick_answer("En que barrio esta el hotel", LINEA)
+assert got and "courtyard" in got["value"].lower(), repr(LINEA)
+assert got["value"].startswith("WhatsApp"), got  # el defecto, congelado con nombre y apellido
+print("cabecera de contacto pegada a la evidencia del barrio: documentado")
 print("TODO OK")
