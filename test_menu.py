@@ -282,6 +282,26 @@ assert names_venue("03 Evening Cafeteria UNTIL 22:00 PM", "Que restaurante tiene
 assert names_venue("CULINARY & COFFEE 04 AUKA RESTOBAR", "Que restaurante tiene el hotel") == 1
 print("pieza que nombra el local gana a la que solo da el horario: OK")
 
+# --- el cromo de navegacion no es evidencia (medido fuera de dominio) ---
+# Sobre 500 paginas REALES de otros dominios (m2w2.valid), la heuristica afirmaba algo ante
+# objetivos de ACCION en el 65,4% de los casos, y los arranques mas comunes eran cabeceras:
+# "skip to main content menu", "welcome to united.com", "upgrade your browser", "my profile sign
+# out". Con `is_navigation_text` bajo a 19,5%, y anadiendo el filtro de repeticion (listas de
+# enlaces y calendarios que repiten fichas) a 11,8%. Ver eval_precision_ooc.py.
+from site2tools.core import is_navigation_text
+
+CABECERA = ("Skip to main content Menu Sign In My Account English Us Dollars USD Search Cart "
+            "flights to Paris from New York are available")
+assert is_navigation_text(CABECERA)
+assert pick_answer("Cuanto cuesta el vuelo a Paris", CABECERA) is None, CABECERA
+for cromo in ("attorneys near Union City, NJ pedicure salon near New York, NY dentist near "
+              "New York, NY lawyers near Newark, NJ",
+              "Reservation Date April 2023 Su Mo Tu We Fr Sa 1 2 3 4 5 6 7 8 9 10 11 12 13 14"):
+    assert pick_answer("Cual es el precio", cromo) is None, cromo
+assert not is_navigation_text("The courtyard, San Pedro")
+assert not is_navigation_text("Breakfast is served from 6:00 to 9:00 in the main hall.")
+print("cabecera y listas de enlaces descartadas como evidencia: OK")
+
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
 from pathlib import Path
 import json as _json

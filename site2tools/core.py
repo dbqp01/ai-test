@@ -69,6 +69,32 @@ GENERIC_GOAL_WORDS |= {
 # courtyard"` de una reseña. No se descarta (a veces es lo único), se penaliza para que una frase
 # propia del sitio gane cuando exista.
 REVIEW_MARKERS = ("booking.com", "tripadvisor", "google", "guests say", "what our guests", "verified")
+
+# Cromo de navegacion. Medido sobre 500 paginas REALES de otros dominios (m2w2.valid): de 327 veces
+# que la heuristica afirmaba algo ante objetivos de accion, los arranques mas frecuentes eran
+# "skip to main content menu" (23), "skip to content cart my bo..." (14), "main content enterprise"
+# (11), "upgrade your browser" (9), "welcome to united.com" (7), "my profile sign out" (5). No es
+# ruido aleatorio: es la cabecera, y llega densisima de palabras comunes, que es justo lo que el
+# puntuador de densidad premió. Se descarta por marcador, no por posicion, porque la misma cabecera
+# se repite en el pie de pagina.
+NAV_HARD = ("skip to main content", "skip to content", "skip to global", "upgrade your browser",
+            "logged out", "sign out", "navigation menu", "search form", "cookie policy",
+            "use cookies", "privacy policy", "accessibility statement")
+NAV_SOFT = ("menu", "sign in", "log in", "my account", "my profile", "cart", "currency", "us dollars",
+            "language", "english", "help", "contact us", "home")
+
+
+def is_navigation_text(text: str) -> bool:
+    """True si el trozo es cabecera/pie de pagina y no contenido que se pueda afirmar.
+
+    Un marcador inequivoco basta; los ambiguos (menu, english, help) hacen falta dos, porque un hotel
+    si puede escribir "we speak english" en su contenido.
+    """
+    bajo = (text or "").lower()
+    if any(duro in bajo for duro in NAV_HARD):
+        return True
+    return sum(1 for blando in NAV_SOFT if blando in bajo) >= 2
+
 # Radio en el que se busca el sello de resena, mas ancho que la ventana que se devuelve: el
 # carrusel del sitio pone "BOOKING.COM" despues de la cita, no dentro de ella.
 REVIEW_SCAN_RADIUS = 400
@@ -210,7 +236,9 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
             # our tour - they packed breakfast for all of us." llega como chunk limpio, sin marca
             # dentro, y su "BOOKING.COM" esta unos metros antes en el cuerpo.
             scan = review_region(body, a, b).lower()
+            ventana = False
             if len(s) > 320:
+                ventana = True
                 # El innerText de una SPA llega casi sin puntos: "Evening Cafeteria" vivía dentro
                 # de un bloque de miles de caracteres que el viejo tope de 320 rechazaba entero, y
                 # por eso `gastronomia` no contestaba teniendo el dato delante. Se ventana alrededor
@@ -233,7 +261,25 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
             # con el texto de un huésped en Booking.com. Penalizar no arreglaba nada cuando no hay
             # otra candidata, así que se descarta y se prefiere `None` (y que el operador siga
             # buscando) antes que afirmar con palabras de un tercero.
+            # Una cabecera de pagina no es un dato del sitio, por mucha palabra comun que comparta
+            # con la pregunta. Ver `is_navigation_text`: medido, era el origen del 62,5% de
+            # afirmaciones falsas fuera de dominio.
+            if is_navigation_text(s):
+                continue
+            # Listas de enlaces y cromo de calendario ("attorneys near Union City, NJ pedicure salon
+            # near New York, NY dentist near Ch...", "Reservation Date April 2023 Su Mo Tu We...") se
+            # reconocen por estructura: repiten fichas. Medido sobre 500 paginas REALES de otros
+            # dominios, baja afirmaciones falsas del 19,5% al 11,8%.
+            # Solo sobre la pieza INTACTA: una ventana recortada dentro de un bloque enorme hereda las
+            # repeticiones del bloque y descartaria evidencia valida (lo pillo el test del SPA sin
+            # puntuacion, que precisamente existe para eso).
+            if not ventana and len(s) <= 320:
+                lista = [w for w in re.findall(r"[a-z0-9]+", s.lower()) if len(w) > 1]
+                if len(lista) >= 5 and len(set(lista)) / len(lista) < 0.8:
+                    continue
             if any(marker in scan for marker in REVIEW_MARKERS):
+
+
                 continue
             score = (len(hits), names_venue(s, goal), len(hits) / (1.0 + 0.03 * len(words)))
             if best is None or score > best[0]:

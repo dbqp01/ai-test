@@ -49,7 +49,30 @@ Cuanto no gana tiempo, si no memoria; la via para latencia seria GGUF/llama.cpp,
   palabra buscada, y se separa la "costura" que innerText pega entre si. Ver `test_menu.py`.
 - Precio anclado a la tarjeta preguntada, no a la primera moneda de la pagina.
 
-## 5. Limitacion conocida, medida y abierta: `ubicacion-barrio` responde con basura pegada
+## 5. Precision FUERA de dominio (el numero que el benchmark del hotel no podia dar)
+Medido con `eval_precision_ooc.py` sobre 400-500 paginas **reales** de otros sitios (split Travel de
+Mind2Web, que ya estaba en disco): son objetivos de ACCION, asi que cualquier afirmacion de la capa
+extractiva es falsa por definicion. Antes de tocar nada, la heuristica afirmaba algo en el **65,4 %**
+de los casos, y los arranques mas frecuentes lo decian todo: "skip to main content menu" (23),
+"skip to content cart my bo" (14), "upgrade your browser" (9), "welcome to united.com skip" (7),
+"my profile sign out" (5). Era la **cabecera de la pagina** tomada como evidencia, porque el scraper
+reescanea el texto entero en el segundo paso y la cabecera llega densisima de palabras comunes, que es
+exactamente lo que premia la densidad.
+
+Despues de dos reglas estructurales:
+- `is_navigation_text()` — cromo inequivoco descarta; los marcadores ambiguos (menu, english, cart)
+  hacen falta dos. **65,4 % -> 19,5 %**.
+- Filtro de repeticion sobre la pieza intacta (listas de enlaces y calendarios repiten fichas;
+  `attorneys near X, NJ pedicure salon near Y...`). **19,5 % -> 11,8 %**. Aplicarlo tambien a las
+  ventanas recortadas mataba evidencia valida dentro de bloques enormes sin puntuacion, y el gate del
+  hotel lo pilló antes de comitear.
+
+El benchmark del hotel, re-medido despues de los dos cambios: **16/16 concluyen, 15 con respuesta,
+15 con procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
+El 11,8 % restante es sobre todo cromo de formulario de alta densidad ("Yes No Continue Male Female")
+y precios de widget legitimos leidos por `anchored_price` en paginas de reservas; esta sin atacar.
+
+## 6. `ubicacion-barrio` resuelto y lo que queda de `gastronomia`
 **RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San
 Pedro"), y lo que impedia partirla era el suelo del extractor (>=25 caracteres y >=5 palabras),
 calibrado para el megachunk colapsado. Simulado sobre el /contact/ real: de las cinco piezas del
