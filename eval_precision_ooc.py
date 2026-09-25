@@ -1,9 +1,15 @@
 """Precision de la capa de respuesta fuera del dominio para el que se ajusto.
 
-`m2w2.valid.jsonl` trae paginas reales de otros dominios (booking, vuelos, compras...) con su
-objetivo. Los objetivos son de accion, no de dato, asi que aqui no se mide "acerto" sino lo unico
-que importa para la politica del proyecto: **cuantas veces la heuristica afirma algo cuando no
-deberia**. Se importa solo el extractor (sin navegador ni modelo), y el muestreo es determinista.
+`m2w2.valid.jsonl` trae paginas reales de sitios de reserva y viajes con su objetivo. Los objetivos
+son de accion, no de dato, asi que aqui no se mide "acerto" sino lo unico que importa para la
+politica del proyecto: **cuantas veces la heuristica afirma algo cuando no deberia**. Se importa solo
+el extractor (sin navegador ni modelo), y el muestreo es determinista.
+
+Limitacion que hay que decir antes de leer el numero: `convert_mind2web_v2.py` guarda la CATEGORIA en
+el campo url de la fila (`"/" + site`, y ahi `site` salio vacio), asi que desde este artefacto NO se
+pueden contar dominios distintos. Lo que se puede afirmar es "paginas reales del split Travel de
+Mind2Web". Y la tasa se divide por las filas realmente evaluadas, no por N: filtrar cortas y dividir
+por N diluye el porcentaje.
 """
 import json
 import random
@@ -32,6 +38,7 @@ rng.shuffle(filas)
 
 sitios = {}
 respondidas = 0
+evaluadas = 0
 ejemplos = []
 for fila in filas[:N]:
     try:
@@ -43,8 +50,9 @@ for fila in filas[:N]:
     url = str((obs.get("observation") or {}).get("url") or "")
     if len(goal) < 12 or len(texto) < 200:
         continue
-    sitios[FUERA.match(url).group(1) if FUERA.match(url) else url[:24]] = \
-        sitios.get(FUERA.match(url).group(1) if FUERA.match(url) else url[:24], 0) + 1
+    evaluadas += 1
+    categoria = str((fila.get("meta") or {}).get("domain") or "sin-categoria")
+    sitios[categoria] = sitios.get(categoria, 0) + 1
     try:
         ans = pick_answer(goal, texto)
     except Exception as exc:  # que un texto raro reviente el extractor tambien es un resultado
@@ -58,15 +66,15 @@ for fila in filas[:N]:
             ejemplos.append((ans.get("kind"), "literal" if verbatim else "NO-LITERAL",
                              goal[:58], valor, url[:26]))
 
-print(f"filas leidas: {min(N, len(filas))} | sitios distintos: {len(sitios)}")
-print("top sitios:", ", ".join(f"{s}={c}" for s, c in sorted(sitios.items(), key=lambda kv: -kv[1])[:6]))
-print(f"la heuristica_afirmo_algo en {respondidas} de {N} objetivos de ACCION "
-      f"({100.0 * respondidas / max(1, N):.1f}%)")
+print(f"filas leidas: {min(N, len(filas))} | evaluadas: {evaluadas} | categorias: "
+      + ", ".join(f"{s}={c}" for s, c in sorted(sitios.items(), key=lambda kv: -kv[1])[:6]))
+print(f"la heuristica_afirmo_algo en {respondidas} de {evaluadas} objetivos de ACCION "
+      f"({100.0 * respondidas / max(1, evaluadas):.1f}%)")
 print("--- muestras para clasificar a mano ---")
 for kind, lit, goal, valor, url in ejemplos[:18]:
     print(f"  [{kind}|{lit}] {url}\n     goal: {goal}\n     resp: {valor}")
 
-porcentaje = 100.0 * respondidas / max(1, N)
+porcentaje = 100.0 * respondidas / max(1, evaluadas)
 if MAXIMO is not None:
     if porcentaje > MAXIMO:
         print(f"FALLO: sobreafirmacion {porcentaje:.1f}% por encima del tope {MAXIMO:.1f}%")

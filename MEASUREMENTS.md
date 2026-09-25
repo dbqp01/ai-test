@@ -75,6 +75,14 @@ ventanas recortadas mataba evidencia valida dentro de bloques enormes sin puntua
 (los nombres de instalacion van en mayuscula: justo 0,50). Con 0,60 queda fuera el cromo y dentro la
 frase, y las dos cosas estan congeladas como test.
 
+**Limitacion del instrumento, dicha en seco:** `convert_mind2web_v2.py` escribe la CATEGORIA en el
+campo url de la fila, asi que desde este artefacto no se pueden contar dominios distintos: lo que se
+puede afirmar es "paginas reales del split Travel de Mind2Web" (2000/2000 en la categoria `Travel`).
+No es un corpus de sitios cualesquiera, es un dominio tematico, y por eso el 8,1 % es una cota sobre
+ese tipo de pagina, no una promesa universal. Re-verificado con el denominador corregido (el script
+dividia por N en vez de por las filas evaluadas: resulto ser `evaluadas == N`, o sea que la cifra no
+cambiaba, pero el bug estaba ahi).
+
 El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
 procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
 
