@@ -269,6 +269,19 @@ for basura in ("Book Now", "Our Rooms", "Skip to main content", "Arrival FAQs",
     assert pick_answer("En que barrio esta el hotel", basura + SALTO) is None, basura
 print("evidencia a nivel de linea, con el relleno de navegacion excluido por termino: OK")
 
+# --- empatadas a terminos, gana la pieza que nombra el local ---
+# Medido: las dos piezas traen UN solo termino comun con la pregunta y la densidad las separaba por
+# ~0,04, o sea que ganaba la mas corta casi al azar. `names_venue` mira mayusculas que compartan
+# principio con el tipo de local preguntado (RESTOBAR ~ restaurante), que es lo que si distingue.
+DOS_PIEZAS = ("03 Evening Cafeteria UNTIL 22:00 PM SERVING LOCAL PRODUCTS" + chr(10)
+              + "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey" + chr(10))
+got = pick_answer("Que restaurante tiene el hotel", DOS_PIEZAS)
+assert got and "auka" in got["value"].lower(), got
+from site2tools.core import names_venue
+assert names_venue("03 Evening Cafeteria UNTIL 22:00 PM", "Que restaurante tiene el hotel") == 0
+assert names_venue("CULINARY & COFFEE 04 AUKA RESTOBAR", "Que restaurante tiene el hotel") == 1
+print("pieza que nombra el local gana a la que solo da el horario: OK")
+
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
 from pathlib import Path
 import json as _json

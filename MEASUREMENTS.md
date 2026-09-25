@@ -62,5 +62,16 @@ Abierto en su lugar, y mas pequeno: `gastronomia` contesto "Cafeteria open until
 nombrar **AUKA RESTOBAR**, porque el puntuador prefiere la pieza mas densa entre dos con un solo
 termino comun. Desempatar por cantidad de nombre propio (`proper_tokens`, 0 vs 6 en las dos piezas
 candidatas) **se midio y fallo**: sobre la pagina completa eligio la descripcion del desayuno, que
-tambien trae "coffee" y un capitalizado. Revertido; hace falta una senal mas especifica que "hay
-nombres propios aqui".
+tambien trae "coffee" y un capitalizado.
+
+Resuelto el ranking con una senal mas especifica: `names_venue()` mira mayusculas que compartan
+principio con el tipo de local preguntado (`RESTOBAR` ~ `restaurante`), y solo actua como desempate
+cuando dos piezas traen el mismo numero de terminos. Sobre 60 observaciones reales cacheadas la pieza
+ganadora pasa a ser **AUKA RESTOBAR en 9 de 9** paginas que lo contienen (congelado en `test_menu.py`).
+
+Lo que queda, y ya no es ranking sino politica de parada: en la corrida de 16 objetivos `gastronomia`
+sigue contestando "Cafeteria open until 10:00 pm" **porque el operador se detuvo en la home, cuya
+seccion de servicios no publica el nombre** (lo publicado ahi es el horario de la cafeteria). Seguir
+buscando teniendo una respuesta valida cuesta pasos y puede empeorar la respuesta; es decision
+de politica, no un bug, y esta medida en `logs/bench16-venue.log` (16/16, 15 respuestas, 15 con
+procedencia, resto de valores identicos).

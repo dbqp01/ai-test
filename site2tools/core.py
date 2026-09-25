@@ -235,7 +235,7 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
             # buscando) antes que afirmar con palabras de un tercero.
             if any(marker in scan for marker in REVIEW_MARKERS):
                 continue
-            score = len(hits) / (1.0 + 0.03 * len(words))
+            score = (len(hits), names_venue(s, goal), len(hits) / (1.0 + 0.03 * len(words)))
             if best is None or score > best[0]:
                 best = (score, s)
         if best is not None:
@@ -1067,6 +1067,27 @@ def normalize_page_text(raw: str) -> str:
     text = re.sub(r"[^\S\n]+", " ", raw or "")
     text = re.sub(r" ?\n ?", "\n", text)
     return re.sub(r"\n{2,}", "\n", text)
+
+
+def names_venue(text: str, goal: str) -> int:
+    """Cuantos terminos en mayusculas de la pieza NOMBRAN el tipo de local que pregunta el objetivo.
+
+    Medido en la pagina de servicios del hotel: las tres piezas candidatas a "que restaurante tiene el
+    hotel" traen UNA sola palabra comun con el objetivo (`cafeteria` o `coffee`), y la densidad las
+    separa por ~0,04, o sea que decide el azar del orden. Lo que si distingue a la buena es que nombra
+    el local: "04 AUKA RESTOBAR" comparte el principio `rest-` con `restaurante`, y ni la descripcion
+    del desayuno ni el horario de la cafeteria lo comparten.
+    """
+    kinds = [w for w in (tokens(goal) - GENERIC_GOAL_WORDS) if len(w) >= 4]
+    if not kinds:
+        return 0
+    encontrados = 0
+    for palabra in text.split():
+        limpia = palabra.strip("().,:;&/|-")
+        if len(limpia) >= 4 and limpia.isalpha() and limpia.isupper():
+            if any(limpia[:4].lower() == kind[:4].lower() for kind in kinds):
+                encontrados += 1
+    return encontrados
 
 
 def stamp_evidence(answer: dict[str, Any] | None,
