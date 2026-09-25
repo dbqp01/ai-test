@@ -59,18 +59,26 @@ de los casos, y los arranques mas frecuentes lo decian todo: "skip to main conte
 reescanea el texto entero en el segundo paso y la cabecera llega densisima de palabras comunes, que es
 exactamente lo que premia la densidad.
 
-Despues de dos reglas estructurales:
+Despues de tres reglas estructurales:
 - `is_navigation_text()` — cromo inequivoco descarta; los marcadores ambiguos (menu, english, cart)
   hacen falta dos. **65,4 % -> 19,5 %**.
 - Filtro de repeticion sobre la pieza intacta (listas de enlaces y calendarios repiten fichas;
-  `attorneys near X, NJ pedicure salon near Y...`). **19,5 % -> 11,8 %**. Aplicarlo tambien a las
-  ventanas recortadas mataba evidencia valida dentro de bloques enormes sin puntuacion, y el gate del
-  hotel lo pilló antes de comitear.
+  `attorneys near X, NJ pedicure salon near Y...`). **19,5 % -> 11,8 %**.
+- Filtro de **listas de etiquetas**: proporcion de tokens que empiezan en mayuscula fuera del
+  primero. Medido sobre lo que quedaba: cromo con mediana 0,69 y maximo 1,00, mientras que las cinco
+  evidencias buenas del hotel estan entre 0,00 y 0,36. **11,8 % -> 4,5 %** (14,5 veces menos que la
+  salida).
 
-El benchmark del hotel, re-medido despues de los dos cambios: **16/16 concluyen, 15 con respuesta,
-15 con procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
-El 11,8 % restante es sobre todo cromo de formulario de alta densidad ("Yes No Continue Male Female")
-y precios de widget legitimos leidos por `anchored_price` en paginas de reservas; esta sin atacar.
+Los dos umbrales los fijo el gate, no la intuicion: aplicar el filtro de repeticion tambien a las
+ventanas recortadas mataba evidencia valida dentro de bloques enormes sin puntuacion, y el umbral
+0,50 de mayusculas se comia "Our facilities include an outdoor Swimming Pool and a Fitness Center"
+(los nombres de instalacion van en mayuscula: justo 0,50). Con 0,60 queda fuera el cromo y dentro la
+frase, y las dos cosas estan congeladas como test.
+
+El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
+procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
+El 4,5 % restante es sobre todo cromo de formulario de alta densidad ("Yes No Continue Male Female")
+y dos precios de widget leidos por `anchored_price` en paginas de reservas.
 
 ## 6. `ubicacion-barrio` resuelto y lo que queda de `gastronomia`
 **RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San

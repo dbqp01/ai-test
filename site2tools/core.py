@@ -79,7 +79,10 @@ REVIEW_MARKERS = ("booking.com", "tripadvisor", "google", "guests say", "what ou
 # se repite en el pie de pagina.
 NAV_HARD = ("skip to main content", "skip to content", "skip to global", "upgrade your browser",
             "logged out", "sign out", "navigation menu", "search form", "cookie policy",
-            "use cookies", "privacy policy", "accessibility statement")
+            "use cookies", "privacy policy", "accessibility statement",
+            # anadidos tras mirar las 47 afirmaciones que quedaban: el aviso de cookies escrito otra
+            # vez ("consent to the use of all the cookies") y la linea legal que lo acompana.
+            "cookies", "terms and conditions", "consent to the use")
 NAV_SOFT = ("menu", "sign in", "log in", "my account", "my profile", "cart", "currency", "us dollars",
             "language", "english", "help", "contact us", "home")
 
@@ -277,7 +280,20 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
                 lista = [w for w in re.findall(r"[a-z0-9]+", s.lower()) if len(w) > 1]
                 if len(lista) >= 5 and len(set(lista)) / len(lista) < 0.8:
                     continue
+            # Listas de etiquetas de menu ("Stays Flights Cars Packages Trains", "Yes No Continue
+            # Male Female", "Restaurants Home Services Auto Services"): midido sobre las 45
+            # afirmaciones falsas que quedaban fuera de dominio, la mediana de tokens que empiezan en
+            # mayuscula --excluido el primero-- es 0,69 con maximo 1,00, mientras que las cinco
+            # evidencias buenas del hotel se quedan entre 0,00 y 0,36. Umbral 0,6, no 0,5: el gate
+            # pillo que "Our facilities include an outdoor Swimming Pool and a Fitness Center" se
+            # planta justo en 0,50 porque los nombres de instalacion van en mayuscula, y esa es una
+            # respuesta legitima. Con 0,6 sigue cayendo la mayor parte del cromo (mediana 0,69).
+            etiquetas = [w for w in clean(s).split() if re.sub(r"[^0-9A-Za-z]", "", w)]
+            cuerpo = [w for w in etiquetas[1:] if len(re.sub(r"[^0-9A-Za-z]", "", w)) >= 3]
+            if len(cuerpo) >= 4 and sum(1 for w in cuerpo if w[:1].isupper()) / len(cuerpo) >= 0.6:
+                continue
             if any(marker in scan for marker in REVIEW_MARKERS):
+
 
 
                 continue

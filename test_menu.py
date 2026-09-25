@@ -302,6 +302,17 @@ assert not is_navigation_text("The courtyard, San Pedro")
 assert not is_navigation_text("Breakfast is served from 6:00 to 9:00 in the main hall.")
 print("cabecera y listas de enlaces descartadas como evidencia: OK")
 
+# --- listas de etiquetas de menu: mayusculas fuera del primer token ---
+# Senal medida: cromo OOD mediana 0,69 / maximo 1,00; evidencias buenas del hotel 0,00-0,36.
+# El umbral es 0,6 porque el gate pillo que "Swimming Pool" y "Fitness Center" (nombres propios de
+# instalacion, en mayuscula) llevan una frase legitima justo a 0,50.
+MENU = "Stays Flights Cars Packages Trains and buses Plan your travel Explore Flight Tracker"
+assert pick_answer("Cuales son las opciones de viaje", MENU) is None, MENU
+assert pick_answer("Tiene piscina el hotel",
+                   "Our facilities include an outdoor Swimming Pool and a Fitness Center.") is not None
+print("lista de etiquetas de menu descartada, frase con nombres de instalacion conservada: OK")
+
+
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
 from pathlib import Path
 import json as _json
