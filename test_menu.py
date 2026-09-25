@@ -327,6 +327,14 @@ assert anchored_price("Cual es el precio por noche de la habitacion Family Super
                       "Family Superior Room $100 per night")["value"] == "$100"
 print("precio de cero descartado, precios reales conservados: OK")
 
+# Y el filtro tiene que valer tambien para el FALLBACK crudo: con un objetivo de precio generico
+# (sin habitacion nombrada) no hay de donde anclar, y ahi era por donde se colaban los "$ 0".
+PAGINA_CON_CERO = ("Oferta limitada $ 0 por persona  |  Double Superior Room desde $150 por noche "
+                   "con desayuno incluido para dos personas")
+got = pick_answer("Cual es el precio por noche", PAGINA_CON_CERO)
+assert got and got["value"] == "$150", got
+print("placeholder filtrado tambien en el fallback de precio generico: OK")
+
 
 
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---

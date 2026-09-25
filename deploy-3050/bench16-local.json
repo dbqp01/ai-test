@@ -13,7 +13,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 10.4
+  "seconds": 13.7
  },
  {
   "label": "desayuno-hora",
@@ -30,7 +30,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.6
  },
  {
   "label": "checkin-hora",
@@ -47,7 +47,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.5
  },
  {
   "label": "checkout-hora",
@@ -64,7 +64,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.5
  },
  {
   "label": "direccion",
@@ -81,7 +81,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.5
  },
  {
   "label": "telefono",
@@ -98,7 +98,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.6
  },
  {
   "label": "correo",
@@ -114,7 +114,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 10.6
+  "seconds": 15.0
  },
  {
   "label": "room-types",
@@ -131,7 +131,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 1.6
  },
  {
   "label": "wifi-clave",
@@ -148,7 +148,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 2.2
+  "seconds": 4.4
  },
  {
   "label": "piscina",
@@ -156,9 +156,9 @@
   "status": "not_found_in_survey",
   "answer": {},
   "survey_pages": 4,
-  "survey_chars": 18064,
+  "survey_chars": 22685,
   "steps": 8,
-  "seconds": 42.6
+  "seconds": 71.6
  },
  {
   "label": "gastronomia",
@@ -174,7 +174,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 2,
-  "seconds": 18.0
+  "seconds": 18.4
  },
  {
   "label": "ubicacion-barrio",
@@ -206,7 +206,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 9.4
+  "seconds": 9.2
  },
  {
   "label": "aeropuerto",
@@ -240,7 +240,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.9
+  "seconds": 0.8
  },
  {
   "label": "oxigeno",
