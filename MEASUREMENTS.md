@@ -99,6 +99,20 @@ todo objetivo de Mind2Web como "de accion" hinchaba la cifra, asi que el script 
 cubetas y **el 8,1 % pasa a ser una cota superior**; la que significa algo es la de ACCION pura (el
 guard del gate evalua esa, no la mezcla).
 
+**A/B homologo, medido sobre las MISMAS 2000 filas y la misma cubeta, con un worktree en el commit
+anterior a las reglas (`caaf48c`):**
+
+| cubeta | antes | ahora |
+|---|---|---|
+| ACCION (afirmar es falso por definicion) | **68,8 %** (1135/1649) | **7,0 %** (116/1649) |
+| DATO (afirmar puede ser correcto) | 36,8 % (129/351) | 13,1 % (46/351) |
+
+O sea: 9,8 veces menos sobreafirmacion en accion. Y el coste, dicho: las mismas reglas que tapan el
+cromo **tambien tapan respuestas legitimas** fuera de dominio (la cubeta de dato baja de 36,8 % a
+13,1 %). Es el intercambio que la politica del proyecto prefiere --precision antes que cobertura--,
+pero es un intercambio, no solo una ganancia, y en un sitio nuevo habra que mirar cuantas respuestas
+buenas se pierden. En el hotel no se perdio ninguna: 16/16, 15 respuestas, 15 con procedencia.
+
 El benchmark del hotel, re-medido despues de todo: **16/16 concluyen, 15 con respuesta, 15 con
 procedencia verificada** (5 literales + 10 de campo publicado) — ninguna respuesta perdida.
 
