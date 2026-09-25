@@ -135,6 +135,21 @@ observado fallaria por muestreo, no por regresion. Lo que queda dentro del 8,1 %
 formulario de alta densidad ("Yes No Continue Male Female") y precios de widget leidos por
 `anchored_price` en paginas de reservas.
 
+**Correccion del parrafo de arriba, medida el mismo dia (commit `5c922f1`):** mi diagnostico estaba
+mal en dos puntos. (1) `anchored_price` **si** ancla bien las tarjetas pegadas: impreso su interior,
+ `$90` gana con score 3 frente a 2 de la Superior Matrimonial. Lo que ponía rojo el gate al hacer el
+ tipo `precio` estricto era otro caso: un objetivo de precio **generico** ('cual es el precio por
+ noche', sin nombrar habitacion) no tiene de donde anclar, y ahi quedarse sin respuesta es
+ regresión, no precisión. (2) Las 19 fugas de precio entraban por el regex crudo, así que el filtro
+ de 'precio de cero' se aplica ahora **tambien ahi**. Resultado medido: la cubeta DE DATO baja de
+ 13,1 % a **9,4 %** (33/351) sin tocar la de ACCION (7,0 %), gate verde con test nuevo y hotel
+ intacto (16/16, 15 respuestas, 15 con procedencia, $90). Es decir: 'o estricto o fallback' era un
+ falso dilema; faltaba el filtro en el sitio correcto.
+
+Sigue abierto de la tarea de patrones: el `telefono` de atencion al cliente que responde a un
+objetivo que no lo pide (10 casos). Ahi el disparador es legitimo y el problema es de **intencion**
+del objetivo, no del patron -- una regex no lo decide.
+
 ## 6. `ubicacion-barrio` resuelto y lo que queda de `gastronomia`
 **RESUELTA el 25-sep (commit `949135e`).** El dato llega a nivel de linea ("The courtyard, San
 Pedro"), y lo que impedia partirla era el suelo del extractor (>=25 caracteres y >=5 palabras),
