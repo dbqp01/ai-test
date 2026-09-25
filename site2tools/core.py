@@ -50,6 +50,20 @@ ANSWER_KINDS = (
 
 
 GENERIC_GOAL_WORDS = {"hotel", "hoteles", "hostal", "page", "pages", "website", "web", "site"}
+# Interrogativos y verbos de apoyo: medido en el diagnostico de `gastronomia`, los terminos del
+# objetivo salian como ['cafe','cafeteria','coffee','dining','que','restaurant','restaurante',
+# 'tiene']. "que" y "tiene" no son informacion, y al contar como solape hacian que cualquier frase
+# con un "que" fuera candidata a evidencia -- y hasta ganara el ranking. Se quitan de la lista de
+# terminos (no del parseo): seguiran sin casar con nada porque no aportan nada.
+GENERIC_GOAL_WORDS |= {
+    "que", "cual", "cuales", "como", "cuando", "donde", "quien", "cuyo", "adonde",
+    "tiene", "tienen", "tenia", "hay", "han", "ha", "es", "son", "ser", "esta", "estan",
+    "puedo", "puedes", "puede", "pueden", "hace", "hacen", "necesito", "necesitas",
+    "quiero", "quieres", "porfavor", "dime", "indique", "favor",
+    "what", "which", "where", "when", "how", "why", "who", "does", "dont", "cant",
+    "is", "are", "was", "were", "can", "could", "would", "should", "tell", "please",
+    "about", "with", "from", "there", "here", "many", "much", "any", "some", "these",
+}
 # Una reseña de Booking/TripAdvisor es texto que el hotel muestra, pero no es un dato del hotel:
 # "en que barrio esta el hotel" contestó con `"It's a nice older building with a walk-around
 # courtyard"` de una reseña. No se descarta (a veces es lo único), se penaliza para que una frase

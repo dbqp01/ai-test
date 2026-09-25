@@ -1,0 +1,11 @@
+# Sin esto, `git add` reescribe cada fichero del snapshot (el droplet los escribe con LF y el
+# portatil los toca con CRLF) y avisa de las conversiones en cada operacion.
+* text=auto eol=lf
+*.safetensors binary
+*.pt binary
+*.pth binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.pdf binary
+*.gz binary

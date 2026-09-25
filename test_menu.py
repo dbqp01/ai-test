@@ -219,4 +219,16 @@ CITA_LEJOS = ('BOOKING.COM "The hospitality of the staff. The cleanliness and wa
               'That was so impressive." C Chul BRAZIL / 2026')
 assert pick_answer("A que hora se sirve el desayuno", CITA_LEJOS) is None, CITA_LEJOS
 print("cita cuya marca cae fuera del chunk tambien se descarta: OK")
+
+# --- interrogativos: "que" y "tiene" no son informacion ---
+# Medido en el diagnostico de `gastronomia`: los terminos del objetivo salian
+# ['cafe','cafeteria','coffee','dining','que','restaurant','restaurante','tiene']. Con "que"
+# contando como solape, cualquier frase con un "que" era evidencia valida y podia ganar el ranking.
+gt = goal_terms("Que restaurante tiene el hotel")
+assert "que" not in gt and "tiene" not in gt, gt
+assert "restaurant" in gt, gt
+RUIDO = ("Esto es una frase cualquiera que habla de otra cosa totalmente distinta, sin ningun dato "
+         "relevante para la pregunta que trae el visitante del hotel.")
+assert pick_answer("Que restaurante tiene el hotel", RUIDO) is None, RUIDO
+print("interrogativos fuera del solape de evidencia: OK")
 print("TODO OK")
