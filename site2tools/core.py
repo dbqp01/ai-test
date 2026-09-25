@@ -164,18 +164,27 @@ def extractive_answer(goal: str, text: str) -> dict[str, Any] | None:
         # poder mirar su contexto antes de aceptarlo como evidencia.
         pieces: list[tuple[int, str]] = []
         pos = 0
-        for sep in re.finditer(r"(?<=[.!?\n])\s+", body):
+        # El salto de linea es una frontera de bloque por si misma: el patron viejo pedia `\s+`
+        # despues del \n, de modo que un \n a secas no partia nada y la evidencia salia pegada a la
+        # cabecera de contacto de al lado.
+        for sep in re.finditer(r"(?<=[.!?])\s+|\n+", body):
             pieces.append((pos, body[pos:sep.start()]))
             pos = sep.end()
         pieces.append((pos, body[pos:]))
         for start, chunk in pieces:
             s = clean(chunk)
-            if len(s) < 25:
+            # Suelo calibrado para PIEZAS de bloque, no para megachunks colapsados. Medido sobre el
+            # /contact/ real del hotel: lo que separa el dato ("The courtyard, San Pedro") del relleno
+            # ("Book Now", "Our Rooms", "Skip to main content", "Call Front Desk +51 992 559 943",
+            # "Arrival FAQs") es que el relleno no trae NINGUN termino distintivo del objetivo, mientras
+            # que el dato trae uno. Exigir 25 caracteres y 5 palabras hacia descartar el dato (24 y 4)
+            # y dejaba pasar el ruido dentro del chunk corrido de 158.
+            if len(s) < 12:
                 continue
             # Guiones: en el texto real del sitio el wifi se escribe "Wi-Fi", y `tokens()` pide 3
             # caracteres o más, así que "wifi" no salía nunca y la pregunta del wifi no casaba.
             words = tokens(s.replace("-", ""))
-            if len(words) < 5:
+            if len(words) < 3:
                 continue
             hits = (gt & words) - GENERIC_GOAL_WORDS
             # Con el puente es->en casi siempre queda UN solo token común ("piscina"->"pool"), así
@@ -739,6 +748,10 @@ class Observation:
     actions: list[Action]
     network: list[dict[str, Any]] = field(default_factory=list)
     timestamp: float = field(default_factory=time.time)
+    # Dos vistas del mismo innerText, cada una con su recorte aplicado sobre su propia
+    # representacion: `text` (colapsada, 20000 caracteres colapsados) es la que ve el modelo y es
+    # byte a byte la medida; `raw_text` conserva las fronteras de bloque para el extractor.
+    raw_text: str = ""
 
 
 class JsonStore:
@@ -863,10 +876,12 @@ class BrowserSession:
                   enabled: !element.disabled
                 });
               }
+              const inner = (document.body ? document.body.innerText : '');
               return {
                 url: location.href,
                 title: document.title || '',
-                text: (document.body ? document.body.innerText : '').replace(/\s+/g, ' ').trim().slice(0, 20000),
+                text: inner.replace(/\s+/g, ' ').trim().slice(0, 20000),
+                blocks: inner.trim().slice(0, 20000),
                 actions
               };
             }
@@ -887,6 +902,7 @@ class BrowserSession:
             url=raw["url"],
             title=clean(raw["title"]),
             text=clean(raw["text"]),
+            raw_text=normalize_page_text(raw.get("blocks") or ""),
             actions=actions,
             network=self.network[-100:],
         )
@@ -1041,6 +1057,18 @@ def corpus_term_evidence(terms, data_dir: Path, start_url: str) -> tuple[int, in
     return hits, docs
 
 
+def normalize_page_text(raw: str) -> str:
+    """Colapsa espacios y tabulaciones del `innerText` sin destruir los saltos de linea.
+
+    `innerText` emite `\n` entre elementos de bloque. Colapsarlos todos convertia la pagina en una
+    sola linea de miles de caracteres, y de ahi venian los bloques corridos: cabecera de contacto +
+    dato + titulo de FAQ pegados, que el extractor devolvia tal cual.
+    """
+    text = re.sub(r"[^\S\n]+", " ", raw or "")
+    text = re.sub(r" ?\n ?", "\n", text)
+    return re.sub(r"\n{2,}", "\n", text)
+
+
 def stamp_evidence(answer: dict[str, Any] | None,
                    pages: list[tuple[str, str]]) -> dict[str, Any] | None:
     """Deja constancia de en que pagina esta literalmente la evidencia de la respuesta.
@@ -1158,17 +1186,20 @@ class UniversalOperator:
             session.goto(entry_url)
             for index in range(self.max_steps):
                 observation = session.observe()
-                last_text = observation.text
+                # El extractor come la vista con fronteras de bloque; el prompt del modelo sigue
+                # viendo `observation.text`, que es la que esta medida (16/16 y 15 respuestas).
+                page_text = observation.raw_text or observation.text
+                last_text = page_text
                 last_url = observation.url
-                all_text = (all_text + " " + observation.text)[-40000:]
+                all_text = (all_text + " " + page_text)[-40000:]
                 if is_hotel_content(observation.url):
-                    own_text = (own_text + " " + observation.text)[-40000:]
-                    evidence_pages.append((observation.url, observation.text))
+                    own_text = (own_text + " " + page_text)[-40000:]
+                    evidence_pages.append((observation.url, page_text))
                 pages_seen.append(observation.url)
                 state_key = page_key(observation)
                 visited[state_key] = visited.get(state_key, 0) + 1
                 if visited[state_key] >= 2 and is_hotel_content(observation.url):
-                    answer = stamp_evidence(pick_answer(goal, observation.text), evidence_pages)
+                    answer = stamp_evidence(pick_answer(goal, page_text), evidence_pages)
                     if answer:
                         result = {
                             "status": "answered",

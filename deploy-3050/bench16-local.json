@@ -13,7 +13,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 16.4
+  "seconds": 9.1
  },
  {
   "label": "desayuno-hora",
@@ -30,7 +30,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "checkin-hora",
@@ -47,7 +47,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "checkout-hora",
@@ -64,7 +64,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "direccion",
@@ -81,7 +81,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "telefono",
@@ -98,7 +98,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "correo",
@@ -114,7 +114,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 19.9
+  "seconds": 9.9
  },
  {
   "label": "room-types",
@@ -131,7 +131,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "wifi-clave",
@@ -148,7 +148,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 4.3
+  "seconds": 1.7
  },
  {
   "label": "piscina",
@@ -156,9 +156,9 @@
   "status": "not_found_in_survey",
   "answer": {},
   "survey_pages": 5,
-  "survey_chars": 14786,
+  "survey_chars": 15391,
   "steps": 8,
-  "seconds": 99.9
+  "seconds": 46.4
  },
  {
   "label": "gastronomia",
@@ -166,15 +166,15 @@
   "status": "answered",
   "answer": {
    "kind": "extractiva",
-   "value": "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey with fresh Andean ingredients in the historic heart of Cusco.",
-   "context": "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey with fresh Andean ingredients in the historic heart of Cusco.",
+   "value": "Cafeteria open until 10:00 pm",
+   "context": "Cafeteria open until 10:00 pm",
    "source_url": "https://usgarhoteles.com/#services",
    "verbatim": true
   },
   "survey_pages": null,
   "survey_chars": null,
-  "steps": 3,
-  "seconds": 57.0
+  "steps": 2,
+  "seconds": 16.4
  },
  {
   "label": "ubicacion-barrio",
@@ -182,15 +182,15 @@
   "status": "answered",
   "answer": {
    "kind": "extractiva",
-   "value": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?",
-   "context": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?",
+   "value": "The courtyard, San Pedro",
+   "context": "The courtyard, San Pedro",
    "source_url": "https://usgarhoteles.com/contact/",
    "verbatim": true
   },
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 17.7
+  "seconds": 8.3
  },
  {
   "label": "idiomas",
@@ -206,7 +206,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 15.2
+  "seconds": 8.6
  },
  {
   "label": "aeropuerto",
@@ -223,7 +223,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "equipaje",
@@ -240,7 +240,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  },
  {
   "label": "oxigeno",
@@ -257,6 +257,6 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.6
  }
 ]

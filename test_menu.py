@@ -258,9 +258,16 @@ SALTO = chr(10)
 LINEA = ("WhatsApp Direct +51992559943" + SALTO + "The courtyard, San Pedro" + SALTO
          + "Arrival FAQs" + SALTO)
 got = pick_answer("En que barrio esta el hotel", LINEA)
-assert got and "courtyard" in got["value"].lower(), repr(LINEA)
-assert got["value"].startswith("WhatsApp"), got  # el defecto, congelado con nombre y apellido
-print("cabecera de contacto pegada a la evidencia del barrio: documentado")
+assert got and got["value"] == "The courtyard, San Pedro", got
+CORRIDO = ("WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro "
+           "Arrival FAQs Can I store my luggage before check-in or after check-out?")
+assert pick_answer("En que barrio esta el hotel", CORRIDO) is not None, CORRIDO
+# Y el relleno de navegacion sigue fuera, aunque ahora el suelo sea mas bajo: lo que lo excluye es
+# que no trae el termino distintivo del objetivo, no su longitud.
+for basura in ("Book Now", "Our Rooms", "Skip to main content", "Arrival FAQs",
+               "Call Front Desk +51 992 559 943"):
+    assert pick_answer("En que barrio esta el hotel", basura + SALTO) is None, basura
+print("evidencia a nivel de linea, con el relleno de navegacion excluido por termino: OK")
 
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
 from pathlib import Path
