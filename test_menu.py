@@ -312,6 +312,22 @@ assert pick_answer("Tiene piscina el hotel",
                    "Our facilities include an outdoor Swimming Pool and a Fitness Center.") is not None
 print("lista de etiquetas de menu descartada, frase con nombres de instalacion conservada: OK")
 
+# --- "$ 0" es el placeholder del widget, no una tarifa ---
+# Medido en 1200 paginas reales de otros dominios: 12 de las 86 sobreafirmaciones que quedaban eran
+# literalmente "$ 0" (precio de reserva sin fechas elegidas).
+from site2tools.core import anchored_price
+
+CERO = "Double Superior Room FROM $0 PER NIGHT Select dates to see rates"
+assert anchored_price("Cual es el precio por noche de la habitacion Doble Superior", CERO) is None, CERO
+assert anchored_price("Cual es el precio por noche de la habitacion Doble Superior",
+                      "Double Superior Room FROM $90 PER NIGHT")["value"] == "$90"
+# El objetivo tiene que nombrar la habitacion: sin ancla `anchored_price` devuelve None a proposito
+# (es lo que impide responder la primera moneda de la pagina).
+assert anchored_price("Cual es el precio por noche de la habitacion Family Superior",
+                      "Family Superior Room $100 per night")["value"] == "$100"
+print("precio de cero descartado, precios reales conservados: OK")
+
+
 
 # --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
 from pathlib import Path

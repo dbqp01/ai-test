@@ -13,7 +13,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 13.3
+  "seconds": 10.4
  },
  {
   "label": "desayuno-hora",
@@ -30,7 +30,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.5
+  "seconds": 0.8
  },
  {
   "label": "checkin-hora",
@@ -47,7 +47,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.5
+  "seconds": 0.8
  },
  {
   "label": "checkout-hora",
@@ -64,7 +64,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.5
+  "seconds": 0.8
  },
  {
   "label": "direccion",
@@ -81,7 +81,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.5
+  "seconds": 0.8
  },
  {
   "label": "telefono",
@@ -98,7 +98,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.5
+  "seconds": 0.8
  },
  {
   "label": "correo",
@@ -114,7 +114,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 14.8
+  "seconds": 10.6
  },
  {
   "label": "room-types",
@@ -131,7 +131,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 1.6
+  "seconds": 0.8
  },
  {
   "label": "wifi-clave",
@@ -148,17 +148,17 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 4.2
+  "seconds": 2.2
  },
  {
   "label": "piscina",
   "goal": "Tiene piscina el hotel",
   "status": "not_found_in_survey",
   "answer": {},
-  "survey_pages": 5,
-  "survey_chars": 20929,
+  "survey_pages": 4,
+  "survey_chars": 18064,
   "steps": 8,
-  "seconds": 85.4
+  "seconds": 42.6
  },
  {
   "label": "gastronomia",
@@ -174,7 +174,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 2,
-  "seconds": 17.9
+  "seconds": 18.0
  },
  {
   "label": "ubicacion-barrio",
@@ -190,7 +190,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 9.0
+  "seconds": 9.5
  },
  {
   "label": "idiomas",
@@ -206,7 +206,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 1,
-  "seconds": 9.2
+  "seconds": 9.4
  },
  {
   "label": "aeropuerto",
@@ -240,7 +240,7 @@
   "survey_pages": null,
   "survey_chars": null,
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 0.9
  },
  {
   "label": "oxigeno",

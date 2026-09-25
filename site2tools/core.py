@@ -353,6 +353,10 @@ def anchored_price(goal: str, text: str) -> dict[str, Any] | None:
         score = len(subject & tokens(segment))
         tail = unit.match((text or "")[m.end():])
         prev_end = m.end() + (len(tail.group(0)) if tail else 0)
+        # Un precio de cero es el placeholder del widget, no una tarifa: en 1200 paginas REALES de
+        # otros dominios, 12 de las 86 sobreafirmaciones que quedaban eran literalmente "$ 0".
+        if not re.sub(r"[^0-9]", "", clean(m.group(0))).strip("0"):
+            continue
         if score < 2:
             continue
         dist = min(abs(m.start() - a) for a in anchors)
