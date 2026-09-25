@@ -38,32 +38,32 @@ El contrato público siempre es operate, aunque internamente existan explorador,
 - data/operations.jsonl: objetivos ejecutados y evidencia.
 - data/traces/*.zip: trazas Playwright.
 
-## Entrenamiento de la política local
+## Entrenar la política (LoRA)
 
-ml/generate_dataset.py fabrica escenarios reproducibles de educación, reportes, soporte, compras y cloud. Cada ejemplo contiene el objetivo, contexto, observación de acciones, historial y la decisión segura esperada. Incluye confirmaciones, requisitos faltantes, sesión expirada y evidencia de éxito.
+`ml/generate_dataset.py` fabrica escenarios reproducibles de educación, reportes, soporte, compras y
+cloud; `convert_mind2web_v2.py` y `build_v3_splits.py` construyen los conjuntos reales (`data/m2w2.*`
+agrupado por sitio, `data/v3.*`). En la MI300X, el champion actual:
 
-En la MI300X:
+    .venv/bin/python train_lora.py --model Qwen/Qwen3-1.7B \
+      --train data/v3.train.jsonl --valid data/v3.valid.jsonl \
+      --output artifacts/site2tools-student-17b-v4 --epochs 2
 
-    python ml/generate_dataset.py --output data/policy.jsonl --count 12000
-    pip install -r requirements-ml.txt
-    python ml/train_lora.py --model Qwen/Qwen2.5-0.5B-Instruct --epochs 2
-    python ml/evaluate_policy.py --adapter artifacts/site2tools-policy-0.5b-lora
+`eval_action_acc.py` mide accción exacta por distribución, y **con control**: `--adapter none` deja
+el modelo base delante, que es la única forma de saber si el gain es del LoRA o del fundamental.
+Los números están en `MEASUREMENTS.md`; `leak_audit.py` audita el solapamiento train/valid.
 
-Para probarlo como política del operador cuando exista el adaptador:
+## Correrlo en la RTX 3050 (hardware objetivo)
 
-    python -m site2tools.server --host 127.0.0.1 --port 8080 --data ./data --policy-adapter ./artifacts/site2tools-policy-0.5b-lora
+    uv venv .venv --python 3.11 && .venv/Scripts/python.exe -m pip install -r deploy-3050/requirements-3050.txt
+    cp -r artifacts/site2tools-student-17b-v4 adapter-v4     # policy.py carga el tokenizer de ahi
+    bash deploy-3050/gate-bench16.sh                          # tests CPU y, si salen verdes, los 16 objetivos
 
-El modelo propone act, request_confirmation, finish o block. El runtime comprueba que el índice exista, que la acción esté habilitada, que las escrituras tengan confirmación y que finish tenga evidencia observable. Si la salida no se puede interpretar, vuelve a la heurística.
+El gate existe porque una vez se lanzo una medicion de cinco minutos con los tests en rojo por leer
+mal el estado de un pipe. Pico medido: 3,92 GB de VRAM y 4,9 tok/s sin cuantizar.
 
-## Entrenamiento de la política local
-
-ml/generate_dataset.py fabrica escenarios reproducibles de educación, reportes, soporte, compras y cloud. Cada ejemplo contiene el objetivo, contexto, observación de acciones, historial y la decisión segura esperada. Incluye confirmaciones, requisitos faltantes, sesión expirada y evidencia de éxito.
-
-En la MI300X:
-
-    python ml/generate_dataset.py --output data/policy.jsonl --count 12000
-    pip install -r requirements-ml.txt
-    python ml/train_lora.py --model Qwen/Qwen2.5-0.5B-Instruct --epochs 2
-    python ml/evaluate_policy.py --adapter artifacts/site2tools-policy-lora
-
-El entrenamiento usa LoRA sobre un modelo causal pequeño. El modelo solo propone la siguiente decisión; el navegador, los permisos y el verificador siguen siendo código determinista. Una buena métrica en datos sintéticos no demuestra generalización a cualquier sitio real: después hay que registrar sitios autorizados y medir por dominio.
+El modelo solo propone la siguiente decisión (`act`, `request_confirmation`, `finish` o `block`); el
+navegador, los permisos y el verificador siguen siendo código determinista: comprueba que el índice
+exista, que la acción esté habilitada, que las escrituras tengan confirmación y que `finish` traiga
+evidencia observable. Si la salida no se interpreta, vuelve a la heurística. Una buena métrica en
+datos sintéticos no demuestra generalización a cualquier sitio real: después hay que registrar sitios
+autorizados y medir por dominio.
