@@ -6,10 +6,12 @@
   "answer": {
    "kind": "precio",
    "value": "$90",
-   "context": "ghting, and artisan textiles that celebrate Cusco's cultural heritage. All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUEST"
+   "context": "ghting, and artisan textiles that celebrate Cusco's cultural heritage. All Rooms 2 Guests 3 Guests 4 Guests 7 Guests 01 / 04 3 GUESTS Double Superior Room FROM $90 PER NIGHT BREAKFAST INCLUDED BOOK YOUR STAY 02 / 04 3 GUEST",
+   "source_url": "https://usgarhoteles.com/rooms/",
+   "verbatim": true
   },
   "steps": 1,
-  "seconds": 13.6
+  "seconds": 11.7
  },
  {
   "label": "desayuno-hora",
@@ -18,10 +20,13 @@
   "answer": {
    "kind": "desayuno-hora",
    "value": "6:00 AM to 9:00 AM",
-   "context": "faq:Is breakfast included and what time is it served?"
+   "context": "faq:Is breakfast included and what time is it served?",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "faq:Is breakfast included and what time is it served?",
+   "verbatim": false
   },
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 0.7
  },
  {
   "label": "checkin-hora",
@@ -30,7 +35,10 @@
   "answer": {
    "kind": "check-in",
    "value": "12:00",
-   "context": "jsonld"
+   "context": "jsonld",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "jsonld",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.6
@@ -42,7 +50,10 @@
   "answer": {
    "kind": "check-out",
    "value": "10:30",
-   "context": "jsonld"
+   "context": "jsonld",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "jsonld",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.6
@@ -54,10 +65,13 @@
   "answer": {
    "kind": "direccion",
    "value": "759 Calle Hospital, Cusco, Cusco, 08002, PE",
-   "context": "jsonld"
+   "context": "jsonld",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "jsonld",
+   "verbatim": false
   },
   "steps": 0,
-  "seconds": 0.6
+  "seconds": 0.7
  },
  {
   "label": "telefono",
@@ -66,7 +80,10 @@
   "answer": {
    "kind": "telefono",
    "value": "+51992559943",
-   "context": "jsonld"
+   "context": "jsonld",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "jsonld",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.6
@@ -78,10 +95,12 @@
   "answer": {
    "kind": "correo",
    "value": "info@usgarhoteles.com",
-   "context": "inbox. No spam, ever. Email SUBSCRIBE CONTACT 759 Calle Hospital, Centro de Cusco, Cusco info@usgarhoteles.com +51 992 559 943 QUICK LINKS Home Rooms Gallery Services Explore Cusco Book Now FOLLOW US FIND US ON YOUR FAVORITE TRAVEL PLATFORM AS FEATURED IN TripAdvisor Booking.com"
+   "context": "inbox. No spam, ever. Email SUBSCRIBE CONTACT 759 Calle Hospital, Centro de Cusco, Cusco info@usgarhoteles.com +51 992 559 943 QUICK LINKS Home Rooms Gallery Services Explore Cusco Book Now FOLLOW US FIND US ON YOUR FAVORITE TRAVEL PLATFORM AS FEATURED IN TripAdvisor Booking.com",
+   "source_url": "https://usgarhoteles.com/",
+   "verbatim": true
   },
   "steps": 1,
-  "seconds": 21.3
+  "seconds": 13.8
  },
  {
   "label": "room-types",
@@ -90,7 +109,10 @@
   "answer": {
    "kind": "room-types",
    "value": "Double Superior Room | Superior Matrimonial Room | Family Superior Room | Triple Standard Room",
-   "context": "select:room-type"
+   "context": "select:room-type",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "select:room-type",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.7
@@ -102,7 +124,10 @@
   "answer": {
    "kind": "wifi-clave",
    "value": "el sitio anuncia wifi gratis pero no publica la clave",
-   "context": "structured:wifi_sin_clave"
+   "context": "structured:wifi_sin_clave",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "structured:wifi_sin_clave",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 1.9
@@ -113,7 +138,7 @@
   "status": "not_found_in_survey",
   "answer": {},
   "steps": 8,
-  "seconds": 67.2
+  "seconds": 71.8
  },
  {
   "label": "gastronomia",
@@ -122,10 +147,12 @@
   "answer": {
    "kind": "extractiva",
    "value": "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey with fresh Andean ingredients in the historic heart of Cusco.",
-   "context": "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey with fresh Andean ingredients in the historic heart of Cusco."
+   "context": "CULINARY & COFFEE 04 AUKA RESTOBAR An unforgettable culinary journey with fresh Andean ingredients in the historic heart of Cusco.",
+   "source_url": "https://usgarhoteles.com/#services",
+   "verbatim": true
   },
   "steps": 2,
-  "seconds": 27.5
+  "seconds": 23.2
  },
  {
   "label": "ubicacion-barrio",
@@ -134,10 +161,12 @@
   "answer": {
    "kind": "extractiva",
    "value": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?",
-   "context": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?"
+   "context": "WhatsApp Direct +51992559943 Call Front Desk +51 992 559 943 The courtyard, San Pedro Arrival FAQs Can I store my luggage before check-in or after check-out?",
+   "source_url": "https://usgarhoteles.com/contact/",
+   "verbatim": true
   },
   "steps": 1,
-  "seconds": 10.3
+  "seconds": 10.1
  },
  {
   "label": "idiomas",
@@ -146,10 +175,12 @@
   "answer": {
    "kind": "extractiva",
    "value": "Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice.",
-   "context": "Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice."
+   "context": "Reach out to our bilingual team for direct reservations, private airport transfers, or travel advice.",
+   "source_url": "https://usgarhoteles.com/contact/",
+   "verbatim": true
   },
   "steps": 1,
-  "seconds": 10.3
+  "seconds": 10.2
  },
  {
   "label": "aeropuerto",
@@ -158,7 +189,10 @@
   "answer": {
    "kind": "faq",
    "value": "Yes, we offer private transfer services. You can arrange a safe, comfortable pickup from Alejandro Velasco Astete Airport (CUZ) or the Poroy/Wanchaq train stations. Please contact us via email or WhatsApp with your flight/train details at least 24 hours in advance to schedule.",
-   "context": "faq:Do you offer airport or train station transfers?"
+   "context": "faq:Do you offer airport or train station transfers?",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "faq:Do you offer airport or train station transfers?",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.6
@@ -170,7 +204,10 @@
   "answer": {
    "kind": "faq",
    "value": "Check-in is from 12:00 PM (noon), and check-out is until 10:30 AM. If you arrive earlier, we will gladly store your luggage for free or check you in early if your room is already prepared.",
-   "context": "faq:What are the check-in and check-out times?"
+   "context": "faq:What are the check-in and check-out times?",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "faq:What are the check-in and check-out times?",
+   "verbatim": false
   },
   "steps": 0,
   "seconds": 0.6
@@ -182,9 +219,12 @@
   "answer": {
    "kind": "faq",
    "value": "Cusco is at 3,400 meters (11,150 feet). To help you acclimatize, we offer complimentary hot Coca tea 24/7 in our lobby. We recommend resting for the first few hours, drinking plenty of water, eating light meals, and avoiding alcohol. We also have oxygen assistance available at the reception if needed.",
-   "context": "faq:How can I prevent altitude sickness (soroche)?"
+   "context": "faq:How can I prevent altitude sickness (soroche)?",
+   "source_url": "https://usgarhoteles.com/",
+   "source_field": "faq:How can I prevent altitude sickness (soroche)?",
+   "verbatim": false
   },
   "steps": 0,
-  "seconds": 0.8
+  "seconds": 0.7
  }
 ]

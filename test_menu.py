@@ -231,4 +231,18 @@ RUIDO = ("Esto es una frase cualquiera que habla de otra cosa totalmente distint
          "relevante para la pregunta que trae el visitante del hotel.")
 assert pick_answer("Que restaurante tiene el hotel", RUIDO) is None, RUIDO
 print("interrogativos fuera del solape de evidencia: OK")
+
+# --- procedencia: toda respuesta ha de poder señalarse en la pagina donde esta ---
+# Sin esto, "cero invenciones" lo decide un humano leyendo el log. `stamp_evidence` exige que el
+# valor devuelto aparezca literal (normalizando espacios) en el innerText de una pagina recorrida.
+from site2tools.core import stamp_evidence
+
+PAGINAS = [("https://x/", "texto de la home"),
+           ("https://x/contact/", "WhatsApp Direct +51 992 559 943   The courtyard,  San Pedro Arrival FAQs")]
+a = stamp_evidence({"kind": "extractiva", "value": "The courtyard, San Pedro"}, PAGINAS)
+assert a["source_url"] == "https://x/contact/", a
+assert a["verbatim"] is True, a
+b = stamp_evidence({"kind": "extractiva", "value": "un valor que no esta en ningun lado"}, PAGINAS)
+assert b["source_url"] is None and b["verbatim"] is False, b
+print("procedencia verificada o declarada ausente: OK")
 print("TODO OK")

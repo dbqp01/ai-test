@@ -1008,6 +1008,29 @@ class WebsiteExplorer:
         return self.graph
 
 
+def stamp_evidence(answer: dict[str, Any] | None,
+                   pages: list[tuple[str, str]]) -> dict[str, Any] | None:
+    """Deja constancia de en que pagina esta literalmente la evidencia de la respuesta.
+
+    Sin esto, "cero respuestas inventadas" es una afirmacion que solo puede comprobar un humano
+    leyendo el log: el valor extractivo no llevaba de donde salio. Aqui se exige que el texto
+    devuelto aparezca tal cual (normalizando espacios) en el innerText de una pagina recorrida.
+    Si no aparece en ninguna, `source_url` queda None y el benchmark cuenta la respuesta como
+    procedencia no verificada, que es exactamente el caso que hay que ver y no esconder.
+    """
+    if not answer or not answer.get("value"):
+        return answer
+    needle = re.sub(r"\s+", " ", str(answer["value"])).strip().lower()
+    for url, text in reversed(pages):
+        if needle and needle in re.sub(r"\s+", " ", text or "").lower():
+            answer["source_url"] = url
+            answer["verbatim"] = True
+            return answer
+    answer["source_url"] = None
+    answer["verbatim"] = False
+    return answer
+
+
 class UniversalOperator:
     def __init__(self, start_url: str, data_dir: Path, max_steps: int = 12,
                  allowed_hosts: Iterable[str] | None = None,
@@ -1064,6 +1087,7 @@ class UniversalOperator:
         last_url = ""
         all_text = ""
         own_text = ""
+        evidence_pages: list[tuple[str, str]] = []
         pages_seen: list[str] = []
         route = route_start_url(goal, load_site_graph(self.data_dir, self.start_url), self.start_url)
         entry_url = route[0] if route else self.start_url
@@ -1082,7 +1106,13 @@ class UniversalOperator:
             result = {
                 "status": "answered",
                 "answer": {"kind": shortcut.get("kind"), "value": shortcut.get("value"),
-                           "context": str(shortcut.get("source") or "")},
+                           "context": str(shortcut.get("source") or ""),
+                           # Un dato estructurado no es una substring literal del innerText (la
+                           # direccion viene de JSON-LD, parts sueltas), asi que su procedencia es
+                           # el campo y la pagina de donde se leyeron, no `verbatim`.
+                           "source_url": str(shortcut.get("_from") or self.start_url),
+                           "source_field": str(shortcut.get("source") or ""),
+                           "verbatim": False},
                 "reason": "datos_estructurados_del_sitio",
                 "url": entry_url,
                 "steps": [],
@@ -1100,11 +1130,12 @@ class UniversalOperator:
                 all_text = (all_text + " " + observation.text)[-40000:]
                 if is_hotel_content(observation.url):
                     own_text = (own_text + " " + observation.text)[-40000:]
+                    evidence_pages.append((observation.url, observation.text))
                 pages_seen.append(observation.url)
                 state_key = page_key(observation)
                 visited[state_key] = visited.get(state_key, 0) + 1
                 if visited[state_key] >= 2 and is_hotel_content(observation.url):
-                    answer = pick_answer(goal, observation.text)
+                    answer = stamp_evidence(pick_answer(goal, observation.text), evidence_pages)
                     if answer:
                         result = {
                             "status": "answered",
@@ -1286,8 +1317,9 @@ class UniversalOperator:
                     }
                     JsonStore(self.data_dir).append("operations.jsonl", result)
                     return result
-            answer = (pick_answer(goal, last_text) if is_hotel_content(last_url) else None) \
-                or pick_answer(goal, own_text)
+            answer = stamp_evidence(
+                (pick_answer(goal, last_text) if is_hotel_content(last_url) else None)
+                or pick_answer(goal, own_text), evidence_pages)
             result: dict[str, Any] = {
                 "status": "budget_exhausted",
                 "steps": steps,

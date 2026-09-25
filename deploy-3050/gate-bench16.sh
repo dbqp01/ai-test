@@ -9,6 +9,9 @@ cd "$(dirname "$0")"
 # La copia solo aplica en el portatil, donde se edita fuera del arbol. En un clone limpio del repo
 # no existe esa ruta y el gate no debe fallar por eso.
 [ -f ../site2tools-backup/snap0042/site2tools/core.py ] && cp ../site2tools-backup/snap0042/site2tools/core.py site2tools/core.py
+# El test tambien: si no se copia, el gate puede ponerse verde con una bateria de tests vieja
+# mientras el canon ha cambiado, que es justo el fallo que ya cometi subiendo codigo suelto.
+[ -f ../site2tools-backup/test_menu.py ] && cp ../site2tools-backup/test_menu.py test_menu.py
 mkdir -p logs
 sha256sum site2tools/core.py | tee -a logs/code-hash.txt
 ./.venv/Scripts/python.exe test_menu.py > logs/gate.log 2>&1

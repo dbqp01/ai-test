@@ -29,8 +29,12 @@ techo, modelo v4 cargado en la GPU local: ver `deploy-3050/bench16-local.json`.
 - **16/16 concluyen** (ninguno se queda colgado ni agota el presupuesto sin veredicto).
 - **15/16 con respuesta**, y la unica ausencia es honesta y acotada a lo recorrido
   (`not_found_in_survey` para "tiene piscina": el sitio no publica piscina).
-- **0 respuestas inventadas**: toda respuesta lleva `source` con la pagina o el campo estructurado
-  del que salio.
+- **0 respuestas inventadas, y eso esta comprobado a maquina**: cada respuesta lleva
+  `source_url`, y `stamp_evidence()` exige que el valor devuelto aparezca tal cual en el
+  `innerText` de una pagina recorrida. Desglose de esa cifra, porque los dos grados no son
+  intercambiables: **5 literales en pagina** (`verbatim: true`) + **10 leidas de un campo
+  publicado** (`jsonld`, `faq:...`, `select:room-type`). El desglose esta en
+  `deploy-3050/bench16-local.json`, objetivo a objetivo, y `run-local16.py` lo imprime.
 
 VRAM medida en el mismo cacharro (`deploy-3050/test-3050.py`): 3.58-3.92 GB de pico a 4.9 tok/s.
 Cuanto no gana tiempo, si no memoria; la via para latencia seria GGUF/llama.cpp, no probada.

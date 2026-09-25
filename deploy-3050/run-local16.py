@@ -41,7 +41,7 @@ policy = ModelDecisionPolicy("adapter-v4", base_model="Qwen/Qwen3-1.7B", device=
 print("policy lista en %.0fs" % (time.time() - t0), flush=True)
 
 Path("data-local").mkdir(exist_ok=True)
-ok = answered = 0
+ok = answered = con_procedencia = 0
 rows = []
 OUT = Path("bench16-local.json")
 for label, goal in GOALS:
@@ -61,6 +61,8 @@ for label, goal in GOALS:
         ok += 1
     if ans.get("value"):
         answered += 1
+        if ans.get("source_url"):
+            con_procedencia += 1
     print("##### %s: %s pasos=%d %.0fs" % (label, st, len(res.get("steps") or []), time.time() - t0),
           flush=True)
     if ans:
@@ -70,5 +72,18 @@ for label, goal in GOALS:
     # Se guarda tras cada objetivo, no al final: un fallo en el print no debe costar la corrida.
     OUT.write_text(json.dumps(rows, ensure_ascii=False, indent=1), encoding="utf-8")
 
-print("=== BENCH16 LOCAL: %d/%d concluyen, %d con respuesta ===" % (ok, len(GOALS), answered),
+print("=== BENCH16 LOCAL: %d/%d concluyen, %d con respuesta, %d con procedencia verificada ==="
+      % (ok, len(GOALS), answered, con_procedencia), flush=True)
+# Los dos grados no son intercambiables: "literal" es evidencia leida del innerText de una pagina,
+# "estructurada" es un campo publicado (JSON-LD / FAQ / select). Sumarlos en una sola cifra infla la
+# afirmacion de "cero invenciones", que es justo lo que este numero tiene que impedir.
+lit = sum(1 for r in rows if (r.get("answer") or {}).get("verbatim"))
+est = sum(1 for r in rows if (r.get("answer") or {}).get("value")
+          and not r["answer"].get("verbatim") and r["answer"].get("source_field"))
+print("   procedencia: %d literal en pagina + %d campo estructurado (jsonld/faq/select)" % (lit, est),
       flush=True)
+sin_proc = [r["label"] for r in rows
+            if (r.get("answer") or {}).get("value") and not r["answer"].get("source_url")]
+if sin_proc:
+    print("RESPUESTAS SIN PROCEDENCIA (revisar antes de afirmar que no hay invencion):", sin_proc,
+          flush=True)
