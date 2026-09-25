@@ -261,4 +261,33 @@ got = pick_answer("En que barrio esta el hotel", LINEA)
 assert got and "courtyard" in got["value"].lower(), repr(LINEA)
 assert got["value"].startswith("WhatsApp"), got  # el defecto, congelado con nombre y apellido
 print("cabecera de contacto pegada a la evidencia del barrio: documentado")
+
+# --- la ausencia puede apoyarse en el corpus cacheado, no solo en el paseo actual ---
+from pathlib import Path
+import json as _json
+import tempfile
+from site2tools.core import corpus_term_evidence
+
+with tempfile.TemporaryDirectory() as d:
+    raiz = Path(d)
+    (raiz / "site_graph.json").write_text(_json.dumps({
+        "start_url": "https://x.example/",
+        "nodes": {"a": {"url": "https://x.example/rooms/", "title": "Rooms",
+                        "text_preview": "Double Superior Room with a view"},
+                  "b": {"url": "https://x.example/gallery/", "title": "Gallery",
+                        "text_preview": "photos of the courtyard"}},
+    }), encoding="utf-8")
+    (raiz / "traces.jsonl").write_text(
+        _json.dumps({"type": "observation", "url": "https://x.example/", "text": "Free Wi-Fi"})
+        + chr(10) + _json.dumps({"type": "observation", "url": "https://x.example/faq/",
+                                 "text": "Is there a pool? Yes, outdoor."}) + chr(10),
+        encoding="utf-8")
+    hits, docs = corpus_term_evidence(["pool"], raiz, "https://x.example/")
+    assert (hits, docs) == (1, 4), (hits, docs)
+    assert corpus_term_evidence(["piscina"], raiz, "https://x.example/")[0] == 0
+    # Host distinto => el grafo no vale, y el corpus se queda solo con las trazas.
+    assert corpus_term_evidence(["pool"], raiz, "https://otro.example/")[1] == 2
+    # El guion no es un caracter de palabra: "Wi-Fi" casa buscando "wifi".
+    assert corpus_term_evidence(["wifi"], raiz, "https://x.example/")[0] == 1
+print("ausencia documentada con el corpus cacheado: OK")
 print("TODO OK")

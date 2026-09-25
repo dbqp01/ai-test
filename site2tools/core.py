@@ -1008,6 +1008,39 @@ class WebsiteExplorer:
         return self.graph
 
 
+def corpus_term_evidence(terms, data_dir: Path, start_url: str) -> tuple[int, int]:
+    """(fragmentos que contienen el termino, documentos cacheados examinados) en TODO el sitio.
+
+    Se declara una ausencia despues de recorrer 5 paginas, pero el disco suele tener mucho mas
+    recorrido ya: medido en usgarhoteles.com, "pool"/"piscina" aparece 0 veces en las 1105 paginas y
+    observaciones cacheadas. Consultar el corpus cuesta milisegundos y da una afirmacion mucho mas
+    fuerte que la del paseo actual, sin gastar un solo paso de navegacion.
+    """
+    docs = 0
+    hits = 0
+    textos: list[str] = []
+    grafo = load_site_graph(data_dir, start_url) or {}
+    for nodo in (grafo.get("nodes") or {}).values():
+        textos.append(" ".join(str(nodo.get(c) or "") for c in ("url", "title", "text_preview")))
+    trazas = data_dir / "traces.jsonl"
+    if trazas.exists():
+        for linea in trazas.read_text(encoding="utf-8", errors="replace").splitlines():
+            try:
+                registro = json.loads(linea)
+            except ValueError:
+                continue
+            if registro.get("type") == "observation":
+                textos.append(str(registro.get("text") or ""))
+    patrones = [re.compile(r"(?<![a-z0-9])" + re.escape(str(t)) + r"(?![a-z0-9])", re.I)
+                for t in set(terms or [])]
+    for texto in textos:
+        docs += 1
+        compacto = texto.replace("-", "")
+        if any(p.search(compacto) for p in patrones):
+            hits += 1
+    return hits, docs
+
+
 def stamp_evidence(answer: dict[str, Any] | None,
                    pages: list[tuple[str, str]]) -> dict[str, Any] | None:
     """Deja constancia de en que pagina esta literalmente la evidencia de la respuesta.
@@ -1363,5 +1396,15 @@ class UniversalOperator:
                     # después de 2 paginas no vale lo mismo que despues de 8 y 40.000 caracteres.
                     result["survey_pages"] = len(set(pages_seen))
                     result["survey_chars"] = len(own_text)
+                    # Y se apoya en lo que ya esta en disco: recorrer el sitio cuesta pasos, consultar
+                    # el corpus cacheado no. Si el termino tampoco aparece ahi, la ausencia deja de ser
+                    # "no lo vi en estas paginas" y pasa a ser "el sitio no lo publica".
+                    if bridged:
+                        hits, docs = corpus_term_evidence(terms, self.data_dir, self.start_url)
+                        result["corpus_docs_checked"] = docs
+                        result["corpus_term_hits"] = hits
+                        if hits == 0 and docs:
+                            result["reason"] = ("termino_no_publicado_en_el_sitio_"
+                                                "ausente_en_corpus_completo")
             JsonStore(self.data_dir).append("operations.jsonl", result)
             return result
